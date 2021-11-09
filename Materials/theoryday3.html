@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Theory Day 3 &#8212; Open Ephys EEA Course Materials December 2021 0.0.0 documentation</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Theory Day 4" href="theoryday4.html" />
+    <link rel="prev" title="Theory Day 2" href="theoryday2.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="../index.html">
+<p class="title">Open Ephys EEA Course Materials December 2021</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="kitlist.html">
+  NeuroKit Contents
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="eeadocsindex.html">
+  OE Cajal Course December 2021
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="disclaimer_terms_conditions.html">
+  Terms and Conditions
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="license.html">
+  Licensing
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="safety.html">
+   Safety &amp; Good Practices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="software_requirements.html">
+   Software Requirements
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="theoryday1.html">
+   Theory Day 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="theoryday2.html">
+   Theory Day 2
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Theory Day 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="theoryday4.html">
+   Theory Day 4
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="exday1TA.html">
+   Exercises Day 1 TA
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="exday2TA.html">
+   Exercises Day 2 TA
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="exday3TA.html">
+   Exercises Day 3 TA
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#differential-amplifiers-remove-common-noise">
+   Differential amplifiers remove common noise
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#referencing">
+     Referencing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#differential-amplifiers">
+     Differential Amplifiers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instrumentation-amplifiers">
+   Instrumentation amplifiers
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#talk">
+     Talk
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-do-we-need-instrumentation-amps">
+     Why do we need Instrumentation amps?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#common-mode-rejection-ratio-cmrr">
+     Common mode rejection ratio (CMRR)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="theory-day-3">
+<span id="reftday3"></span><h1>Theory Day 3<a class="headerlink" href="#theory-day-3" title="Permalink to this headline">¶</a></h1>
+<p>An acquisition system must therefore:
+- <em>Detect</em> changes in electric potential difference
+- Faithfully <em>transfer</em> this signal to our acquisition system output
+- Distinguish interesting biological <em>signals</em> from other sources of electrical <em>noise</em></p>
+<section id="differential-amplifiers-remove-common-noise">
+<h2>Differential amplifiers remove common noise<a class="headerlink" href="#differential-amplifiers-remove-common-noise" title="Permalink to this headline">¶</a></h2>
+<section id="referencing">
+<h3>Referencing<a class="headerlink" href="#referencing" title="Permalink to this headline">¶</a></h3>
+<p>We live in an (electrically) very noisy world. We always have to measure our signal as the difference between two points- one is our recording electrode. The other point is our reference, which can be another electrode in the brain or a screw in the animal’s skull. The choice you make here is very important for your recording: the amplifier will output the difference between your recording electrode and your reference point. That means that the amplifier will do its best to get rid of any signal that the two share. If the recording electrode picks up 50 Hz noise generated by the mains power supply in the walls, you want the amplifier to get rid of it, so it’s best to use a reference point that will also pick up this noise. However, if your reference is picking up signals that you are interested in, the amplifier will get rid of those too. To choose an appropriate reference, you have to decide what qualifies as noise in your experiment.</p>
+</section>
+<section id="differential-amplifiers">
+<h3>Differential Amplifiers<a class="headerlink" href="#differential-amplifiers" title="Permalink to this headline">¶</a></h3>
+<center><iframe width="560" height="340" src="https://www.youtube.com/embed/91SVSdoEFzU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center><p>The amplification of the potential difference between the microelectrode and the reference electrode (in the order of microvolts) is a crucial step, and is accomplished with differential amplifiers that amplify the differences, rejecting the noise that is often introduced as common-mode potential in the circuit (i.e., noise identical in the recording and reference electrodes typically caused by motion artifacts and capacitive coupling of the body and electrode lead with power line fields (Nunez &amp; Srinivasan, 2009)).</p>
+</section>
+</section>
+<section id="instrumentation-amplifiers">
+<h2>Instrumentation amplifiers<a class="headerlink" href="#instrumentation-amplifiers" title="Permalink to this headline">¶</a></h2>
+<section id="talk">
+<h3>Talk<a class="headerlink" href="#talk" title="Permalink to this headline">¶</a></h3>
+<br>
+<center><iframe width="560" height="340" src="https://www.youtube.com/embed/uPcv0gBjqbA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<br></section>
+<section id="why-do-we-need-instrumentation-amps">
+<h3>Why do we need Instrumentation amps?<a class="headerlink" href="#why-do-we-need-instrumentation-amps" title="Permalink to this headline">¶</a></h3>
+<p>Let’s quickly revisit why we can’t just use 1 operational amplifier to get a nice signal.</p>
+<a class="reference external image-reference" href="https://tinyurl.com/y4aps4r2"><img alt="../_images/eea_fig-49.png" class="align-center" src="../_images/eea_fig-49.png" /></a>
+<p>To make this circuit differential, we need voltage dividers. But, these are connecting our fragile signal to ground! Plus, remember how any mismatch in the input impedances between ‘+’ and ‘-’ messes up the signal if there is a lot of common mode noise? In practical terms, there is always going to be a mismatch between these resistors; they simply cannot be produced in a way that makes them exactly equal. Why? Because this resistor is <em>also your electrode</em>. If you work with electrodes, have you measured their impedances? How similar are they? If you made these resistors as different as your electrodes are variable, this circuit will not work to eliminate common mode noise and amplify our spikes.</p>
+<p>The solution is to use <em>three</em> op-amps:</p>
+<a class="reference internal image-reference" href="../_images/eea_fig-33.png"><img alt="../_images/eea_fig-33.png" class="align-center" src="../_images/eea_fig-33.png" style="width: 568.0px; height: 227.20000000000002px;" /></a>
+<p>Here it is in the simulator:</p>
+<a class="reference external image-reference" href="https://tinyurl.com/yjxekrv5"><img alt="../_images/eea_fig-53.png" class="align-center" src="../_images/eea_fig-53.png" /></a>
+<p>Gain resistor:
+The voltages on either side are fixed, because the op-amps are keeping them in place. Same V and lower R = more current must travel through the resistor, and therefore more current through the feedback resistors of the two buffer op-amps. Those are fixed resistors: higher I for same R is a higher voltage drop across these resistors. Both buffer op-amps now have to work harder to overcome this voltage drop and will output more extreme voltages. By decreasing the value of Rgain, we are basically making the inputs to the final op-amp more different to each other, and therefore increasing the gain of the instrumentation amp.</p>
+</section>
+<section id="common-mode-rejection-ratio-cmrr">
+<h3>Common mode rejection ratio (CMRR)<a class="headerlink" href="#common-mode-rejection-ratio-cmrr" title="Permalink to this headline">¶</a></h3>
+<p>When the input impedances of the differential amplifier weren’t matched, part of the input signal that was common to both inputs, and thus should be cancelled out, actually appeared in the output. A common way to model how well an amplifier subtracts one input to the other is the following:
+We define each input (+ and -) to be a sum of an individual voltage (V1 or V2) plus a voltage common to both. In our arms, or the brain of an animal, this common voltage (Vc) could be electrical noise or muscle activity we are not interested in and want to discard. In this case, the inputs would be:</p>
+<div class="math notranslate nohighlight">
+\[V+ = V1 + Vc\]</div>
+<div class="math notranslate nohighlight">
+\[V- = V2 + Vc\]</div>
+<p>(In our earlier examples of a differential amplifier, V2 was ground 0V, which is a perfectly valid value). In an <strong>ideal</strong> differential amplifier, the output should be the difference of both amplified by a factor:</p>
+<div class="math notranslate nohighlight">
+\[Vout = Ad (V+ - V-)\]</div>
+<div class="math notranslate nohighlight">
+\[= Ad ((V1+Vc)-(V2+Vc))\]</div>
+<div class="math notranslate nohighlight">
+\[= Ad (V1-V2)\]</div>
+<p>Where Ad is the differential gain, the factor by which the differential signal is amplified.
+Here, the unwanted, common signals cancel out and only the signal we are interested in is amplified.</p>
+<p>A <strong>real</strong> amplifier, however, acts in a different way. As we’ve seen, small imperfections can lead to part of the common voltages being amplified as well. In this case, the output of a real amplifier ends up being:</p>
+<div class="math notranslate nohighlight">
+\[Vout = Ad (V1 - V2 ) + Ac * Vc\]</div>
+<p>In addition to the differential gain, a new term  ‘Ac’, or common gain, appears. This amplifies the signal common to both inputs. Of course, we want an amplifier to have a differential gain as high as possible and a common gain as low as possible (ideally, Ac would be 0). The relation between these two gains tells us how good an amplifier is at amplifying only the differential signals. This is called the Common Mode Rejection Ratio, or CMRR, simply defined as</p>
+<div class="math notranslate nohighlight">
+\[CMRR = \frac{Ad}{Ac}\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[CMRR = 20log\frac{Ad}{Ac}\]</div>
+<p>if measured in decibels.</p>
+<p>The higher the CMRR, the better the amplifier is at cancelling out the signals common to both inputs.
+Instrumentation amplifiers are not completely immune to common input noise. They are real circuits and, as such, there are multiple ways for these common signals to bleed out into the output. They have, however, a very high CMRR. Comparing the two devices we’ve been using, the operational amplifier LM358 has a CMRR of 80dB while the instrumentation amplifier has a CMRR of 120dB, 100 times higher! (Sounds underwhelming? Remember decibels are logarithmic; the difference between 80 and 120 dB in terms of sound is the difference between a toilet flushing and a jet engine).</p>
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="theoryday2.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Theory Day 2</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="theoryday4.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Theory Day 4</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2010-2021, Open Ephys, OEPS &amp; Contributors.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>
