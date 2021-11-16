@@ -78,7 +78,7 @@
 
 <li class="toctree-l1 current active nav-item">
  <a class="reference internal nav-link" href="eeadocsindex.html">
-  OE Cajal Course December 2021
+  Course Materials
  </a>
 </li>
 
@@ -222,6 +222,11 @@
      Differential Amplifiers
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#talk">
+     Talk
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -230,7 +235,7 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#talk">
+    <a class="reference internal nav-link" href="#id1">
      Talk
     </a>
    </li>
@@ -301,27 +306,31 @@
 <div class="contents local topic" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#differential-amplifiers-remove-common-noise" id="id1">Differential amplifiers remove common noise</a></p>
+<li><p><a class="reference internal" href="#differential-amplifiers-remove-common-noise" id="id2">Differential amplifiers remove common noise</a></p>
 <ul>
-<li><p><a class="reference internal" href="#referencing" id="id2">Referencing</a></p></li>
-<li><p><a class="reference internal" href="#differential-amplifiers" id="id3">Differential Amplifiers</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#instrumentation-amplifiers" id="id4">Instrumentation amplifiers</a></p>
-<ul>
+<li><p><a class="reference internal" href="#referencing" id="id3">Referencing</a></p></li>
+<li><p><a class="reference internal" href="#differential-amplifiers" id="id4">Differential Amplifiers</a></p></li>
 <li><p><a class="reference internal" href="#talk" id="id5">Talk</a></p></li>
-<li><p><a class="reference internal" href="#why-do-we-need-instrumentation-amps" id="id6">Why do we need Instrumentation amps?</a></p></li>
-<li><p><a class="reference internal" href="#common-mode-rejection-ratio-cmrr" id="id7">Common mode rejection ratio (CMRR)</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#why-do-we-need-a-ground-electrode" id="id8">Why do we need a ground electrode?</a></p></li>
-<li><p><a class="reference internal" href="#low-and-high-pass-filtering" id="id9">Low and High pass filtering</a></p>
+<li><p><a class="reference internal" href="#instrumentation-amplifiers" id="id6">Instrumentation amplifiers</a></p>
 <ul>
-<li><p><a class="reference internal" href="#low-pass-filters" id="id10">Low-pass filters</a></p></li>
-<li><p><a class="reference internal" href="#high-pass-filters" id="id11">High-pass filters</a></p></li>
+<li><p><a class="reference internal" href="#id1" id="id7">Talk</a></p></li>
+<li><p><a class="reference internal" href="#why-do-we-need-instrumentation-amps" id="id8">Why do we need Instrumentation amps?</a></p></li>
+<li><p><a class="reference internal" href="#common-mode-rejection-ratio-cmrr" id="id9">Common mode rejection ratio (CMRR)</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#why-do-we-need-a-ground-electrode" id="id10">Why do we need a ground electrode?</a></p></li>
+<li><p><a class="reference internal" href="#low-and-high-pass-filtering" id="id11">Low and High pass filtering</a></p>
+<ul>
+<li><p><a class="reference internal" href="#low-pass-filters" id="id12">Low-pass filters</a></p></li>
+<li><p><a class="reference internal" href="#high-pass-filters" id="id13">High-pass filters</a></p></li>
 </ul>
 </li>
 </ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
 </div>
 <p>An acquisition system must:</p>
 <ul class="simple">
@@ -330,31 +339,39 @@
 <li><p><strong>Distinguish interesting biological signals from other sources of electrical noise</strong></p></li>
 </ul>
 <section id="differential-amplifiers-remove-common-noise">
-<h2><a class="toc-backref" href="#id1">Differential amplifiers remove common noise</a><a class="headerlink" href="#differential-amplifiers-remove-common-noise" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">Differential amplifiers remove common noise</a><a class="headerlink" href="#differential-amplifiers-remove-common-noise" title="Permalink to this headline">¶</a></h2>
 <section id="referencing">
-<h3><a class="toc-backref" href="#id2">Referencing</a><a class="headerlink" href="#referencing" title="Permalink to this headline">¶</a></h3>
-<p>We live in an (electrically) very noisy world. We always have to measure our signal as the difference between two points- one is our recording electrode. The other point is our reference, which can be another electrode in the brain or a screw in the animal’s skull. The choice you make here is very important for your recording: the amplifier will output the difference between your recording electrode and your reference point. That means that the amplifier will do its best to get rid of any signal that the two share. If the recording electrode picks up 50 Hz noise generated by the mains power supply in the walls, you want the amplifier to get rid of it, so it’s best to use a reference point that will also pick up this noise. However, if your reference is picking up signals that you are interested in, the amplifier will get rid of those too. To choose an appropriate reference, you have to decide what qualifies as noise in your experiment.</p>
+<h3><a class="toc-backref" href="#id3">Referencing</a><a class="headerlink" href="#referencing" title="Permalink to this headline">¶</a></h3>
+<p>We live in an (electrically) very noisy world. To get rid of some of this noise from our recording, we can use a reference, which can be another electrode in the brain or a screw in the animal’s skull. The choice you make here is very important for your recording: the amplifier will output the difference between your recording electrode and your reference point. That means that the amplifier will do its best to get rid of any signal that the two share. If the recording electrode is picking up 50 Hz noise generated by the mains power supply in the walls, you want the amplifier to get rid of it, so it’s best to use a reference point that will also pick up this noise. However, if your reference is picking up signals that you are interested in, the amplifier will get rid of those too. To choose an appropriate reference, you have to decide what qualifies as noise in your experiment.</p>
 </section>
 <section id="differential-amplifiers">
-<h3><a class="toc-backref" href="#id3">Differential Amplifiers</a><a class="headerlink" href="#differential-amplifiers" title="Permalink to this headline">¶</a></h3>
-<center><iframe width="560" height="340" src="https://www.youtube.com/embed/91SVSdoEFzU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center><p>The amplification of the potential difference between the microelectrode and the reference electrode (in the order of microvolts) is a crucial step, and is accomplished with differential amplifiers that amplify the differences, rejecting the noise that is often introduced as common-mode potential in the circuit (i.e., noise identical in the recording and reference electrodes typically caused by motion artifacts and capacitive coupling of the body and electrode lead with power line fields (Nunez &amp; Srinivasan, 2009)).</p>
+<h3><a class="toc-backref" href="#id4">Differential Amplifiers</a><a class="headerlink" href="#differential-amplifiers" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="talk">
+<h3><a class="toc-backref" href="#id5">Talk</a><a class="headerlink" href="#talk" title="Permalink to this headline">¶</a></h3>
+<center><iframe width="560" height="340" src="https://www.youtube.com/embed/91SVSdoEFzU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center><p>The amplification of the potential difference between the measuring electrode and the reference electrode (in the order of microvolts) is a crucial step. This is accomplished with differential amplifiers that amplify the difference and rejecting the ‘common-mode’ noise (i.e., noise identical in the recording and reference electrodes typically caused by motion artifacts and capacitive coupling of the body and electrode lead with power line fields (Nunez &amp; Srinivasan, 2009)).</p>
 </section>
 </section>
 <section id="instrumentation-amplifiers">
-<h2><a class="toc-backref" href="#id4">Instrumentation amplifiers</a><a class="headerlink" href="#instrumentation-amplifiers" title="Permalink to this headline">¶</a></h2>
-<section id="talk">
-<h3><a class="toc-backref" href="#id5">Talk</a><a class="headerlink" href="#talk" title="Permalink to this headline">¶</a></h3>
+<h2><a class="toc-backref" href="#id6">Instrumentation amplifiers</a><a class="headerlink" href="#instrumentation-amplifiers" title="Permalink to this headline">¶</a></h2>
+<section id="id1">
+<h3><a class="toc-backref" href="#id7">Talk</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <br>
 <center><iframe width="560" height="340" src="https://www.youtube.com/embed/uPcv0gBjqbA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 <br></section>
 <section id="why-do-we-need-instrumentation-amps">
-<h3><a class="toc-backref" href="#id6">Why do we need Instrumentation amps?</a><a class="headerlink" href="#why-do-we-need-instrumentation-amps" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id8">Why do we need Instrumentation amps?</a><a class="headerlink" href="#why-do-we-need-instrumentation-amps" title="Permalink to this headline">¶</a></h3>
 <p>Why can’t we just use 1 operational amplifier to get a nice signal?</p>
 <a class="reference external image-reference" href="https://tinyurl.com/y4aps4r2"><img alt="../_images/eea_fig-49.png" class="align-center" src="../_images/eea_fig-49.png" /></a>
-<p>To make this circuit differential, we need voltage dividers. But, these are connecting our fragile signal to ground! Plus, any mismatch in the input impedances between ‘+’ and ‘-’ messes up the signal if there is a lot of common mode noise. In practical terms, there is always going to be a mismatch between these resistors; they simply cannot be produced in a way that makes them exactly equal. Why? Because this resistor is <em>also your electrode</em>. If you work with electrodes, have you measured their impedances? How similar are they? If you made these resistors as different as your electrodes are variable, this circuit will not work to eliminate common mode noise and amplify our spikes.</p>
+<p>To make this circuit differential, we need voltage dividers. But these are connecting our fragile signal to ground! Plus, any mismatch in the input impedances between ‘+’ and ‘-’ messes up the signal if there is a lot of common mode noise. In practical terms, there is always going to be a mismatch between these resistors, they simply cannot be produced in a way that makes them exactly equal.</p>
+<p>Why? Because this resistor is <em>also your electrode</em>. If you work with electrodes, have you measured their impedances? How similar are they? If you made these resistors as different as your electrodes are variable, this circuit will not work to eliminate common mode noise and amplify our spikes.</p>
 <p>The solution is to use <em>three</em> op-amps:</p>
 <a class="reference internal image-reference" href="../_images/eea_fig-33.png"><img alt="../_images/eea_fig-33.png" class="align-center" src="../_images/eea_fig-33.png" style="width: 568.0px; height: 227.20000000000002px;" /></a>
-<p>Here it is in the simulator:</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Here it is in the simulator:
+|</p>
 <a class="reference external image-reference" href="https://tinyurl.com/yjxekrv5"><img alt="../_images/eea_fig-53.png" class="align-center" src="../_images/eea_fig-53.png" /></a>
 <section id="gain-resistor">
 <h4>Gain resistor<a class="headerlink" href="#gain-resistor" title="Permalink to this headline">¶</a></h4>
@@ -362,14 +379,14 @@
 </section>
 </section>
 <section id="common-mode-rejection-ratio-cmrr">
-<h3><a class="toc-backref" href="#id7">Common mode rejection ratio (CMRR)</a><a class="headerlink" href="#common-mode-rejection-ratio-cmrr" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id9">Common mode rejection ratio (CMRR)</a><a class="headerlink" href="#common-mode-rejection-ratio-cmrr" title="Permalink to this headline">¶</a></h3>
 <p>When the input impedances of the differential amplifier weren’t matched, part of the input signal that was common to both inputs, and thus should be cancelled out, actually appeared in the output. A common way to model how well an amplifier subtracts one input to the other is the following:
 We define each input (+ and -) to be a sum of an individual voltage (V1 or V2) plus a voltage common to both. In our arms, or the brain of an animal, this common voltage (Vc) could be electrical noise or muscle activity we are not interested in and want to discard. In this case, the inputs would be:</p>
 <div class="math notranslate nohighlight">
 \[V+ = V1 + Vc\]</div>
 <div class="math notranslate nohighlight">
 \[V- = V2 + Vc\]</div>
-<p>(In our earlier examples of a differential amplifier, V2 was ground 0V, which is a perfectly valid value). In an <strong>ideal</strong> differential amplifier, the output should be the difference of both amplified by a factor:</p>
+<p>(In some examples of a differential amplifier, V2 is ground 0V, which is a perfectly valid value). In an <strong>ideal</strong> differential amplifier, the output should be the difference of both amplified by a factor:</p>
 <div class="math notranslate nohighlight">
 \[Vout = Ad (V+ - V-)\]</div>
 <div class="math notranslate nohighlight">
@@ -393,22 +410,37 @@ Instrumentation amplifiers are not completely immune to common input noise. They
 </section>
 </section>
 <section id="why-do-we-need-a-ground-electrode">
-<span id="refgroundref"></span><h2><a class="toc-backref" href="#id8">Why do we need a ground electrode?</a><a class="headerlink" href="#why-do-we-need-a-ground-electrode" title="Permalink to this headline">¶</a></h2>
+<span id="refgroundref"></span><h2><a class="toc-backref" href="#id10">Why do we need a ground electrode?</a><a class="headerlink" href="#why-do-we-need-a-ground-electrode" title="Permalink to this headline">¶</a></h2>
 <p>When we build our EMG circuit, we will use three electrodes: measurement (+), reference (-), and ground. Why do we have a ground electrode (or ground pin or screw) when we already have ‘+’ and ‘-’ inputs? This is a bit tricky, and there’s multiple ways to understand it.</p>
 <br>
 <center><iframe width="560" height="340" src="https://www.youtube.com/embed/YE2cdXtzlF4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </center>
-<br><p>Imagine you just walked across a carpet and you’re charged to 10kV. Now you want to do a differential measurement of EMG (or EEG). In theory, as far as we’ve really talked about till now, this should work via the magic of common-mode rejection. However, remember the circuit that is inside the instrumentation amp:</p>
+<br><p>Imagine you just walked across a carpet and you’re charged to 10kV. Now you want to do a differential measurement of EMG (or EEG). In theory, as far as we’ve really talked about until now, this should work via the magic of common-mode rejection. However, remember the circuit that is inside the instrumentation amp:</p>
 <a class="reference external image-reference" href="https://tinyurl.com/yjxekrv5"><img alt="../_images/eea_fig-53.png" class="align-center" src="../_images/eea_fig-53.png" /></a>
-<p>The ‘-’ inputs of the two input op-amps are connected to ground, via a bunch of resistors. If you are charged to 10kV compared to g round, we’re asking these op-amps to deal with pretty high values individually, and they will saturate. Even if here we did not include rails in the simulation, remember that each op-amp can only go as high or low as its voltage rails (3V in our case, so with a 100x gain, a 0.03V input saturates the amplifier).
-Attaching a ground electrode to ourselves, and then connecting this to the ground of our acquisition system, brings our body to 0V from the perspective of the acquisition system. The remaining noise fluctuations are still there, but the voltage difference  is not as big anymore. We will still have residual 50 or 60Hz noise from the mains supply, plus other muscles, electrostatic charge, bodies moving through the fields in the room and so on, but these can all be handled by the amplifier.</p>
+<p>The ‘-’ inputs of the two input op-amps are connected to ground, via a bunch of resistors. If you are charged to 10kV compared to Ground, we’re asking these op-amps to deal with very high differences in voltage, and they will saturate. Even if here we did not include rails in the simulation, remember that each op-amp can only go as high or low as its voltage rails (3V in our case, so with a 100x gain, a 0.03V input saturates the amplifier).</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <p>Remember the common mode rejection ratio. If our amplifier is good at rejecting 99.99% of the common mode, but 0.01% makes it through, in the range of volts, this could still be enough to prevent us from resolving microvolt spikes.</p>
-<p>The last, related, issue is that the output of the whole thing is relative to ground. At some point you want to connect this to a PC, which sits at ground level. A possible solution of course is if we make the entire thing battery powered - this is actually a great idea in our exercises, if you have a laptop.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Attaching a ground electrode to ourselves, and then connecting this to the ground of our acquisition system, brings our body to 0V from the perspective of the acquisition system. The remaining noise fluctuations are still there, but the voltage difference is not as big anymore. We will still have residual 50 or 60Hz noise from the mains supply, plus other muscles, electrostatic charge, bodies moving through the fields in the room and so on, but these can all be handled by the amplifier.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>The last, related, issue is that the output of the whole thing is relative to ground. At some point you want to connect this to a PC, which sits at ground level.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <p>Practically, all this means that we want to ground our subjects as well as possible. For tetrode recordings in mice, we use a large ‘ground screw’ with low impedance to ground, so that we can effectively discharge the mouse.</p>
-<p>One more detail: ground is not (always) earth, in many cases it is just a certain circuit we treat as 0. That circuit can have noise on it, just like any other circuit. If the ground has a lot of 50/60Hz noise, we’ll be charging and discharging the animal (any animal is also a capacitor) constantly through the ground connection. If the ground screw/electrode is low enough impedance and close to our recording site, we’ll manage to keep the animal’s voltage equal to the changing GND level and we won’t notice this noise. However, if we put the ground screw/electrode too far away from where we record, e.g. we put the ground connection on the tail (extreme example), then the head of the animal won’t be sufficiently charged/discharged and we’ll encounter what will look like 50/60Hz noise in our tetrode recordings.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>One more detail: Ground is not (always) earth, in many cases it is just a certain circuit we treat as 0 that can provide or sink a lot of current. That circuit can have noise on it, just like any other circuit. If the ground has a lot of 50/60Hz noise, we’ll be charging and discharging the animal (any animal is also a capacitor) constantly through the ground connection. If the ground screw/electrode is low enough impedance and close to our recording site, we’ll manage to keep the animal’s voltage equal to the changing GND level and we won’t notice this noise. However, if we put the ground screw/electrode too far away from where we record, e.g. we put the ground connection on the tail (extreme example), then the head of the animal won’t be sufficiently charged/discharged and we’ll encounter what will look like 50/60Hz noise in our tetrode recordings.</p>
 </section>
 <section id="low-and-high-pass-filtering">
-<span id="reffilter"></span><h2><a class="toc-backref" href="#id9">Low and High pass filtering</a><a class="headerlink" href="#low-and-high-pass-filtering" title="Permalink to this headline">¶</a></h2>
+<span id="reffilter"></span><h2><a class="toc-backref" href="#id11">Low and High pass filtering</a><a class="headerlink" href="#low-and-high-pass-filtering" title="Permalink to this headline">¶</a></h2>
 <p>Filters are used to remove certain frequencies from our data. We can do this in hardware or in software. Usually hardware filtering (implemented in the amplifier circuit) is used to increase (apparent) signal to noise ratio by rejecting unwanted frequencies and to prevent signal aliasing (e.g., bandpass between 0.5 and 2 kHz).
 Remember the exercise where we measured the voltage across our fingers with the oscilloscope, and saw very high values. Even with a differential amplifier, we usually have a decent amount of slow (~&lt;10Hz or so) voltages that are simply too big for the amplifier or ADC (analog to digital converter). Any voltages above or below the amplifier rails (or above/below the input range of the digitizer) will be ‘clipped’ and all we’ll see is a constant value.
 The solution is to remove the large amplitude slow components, so we can fit the lower amplitude, faster, interesting components into our dynamic range.</p>
@@ -416,12 +448,12 @@ The solution is to remove the large amplitude slow components, so we can fit the
 <p>Therefore, high-pass filters first remove the large DC offsets present at the electrode-extracellular interface, along with any undesired low-frequency signals (e.g., movement artefacts). Additionally, low-pass filters must be configured to less than half of the ADC frequency sampling rate (Nyquist limit) to prevent aliasing, and may also be used to block undesired high-frequency signals and artefacts. For instance, if our sampling frequency is 30 kHz, the low pass filter should be ~15 kHz. Below is an example of the Intan headstage circuit.</p>
 <img alt="../_images/eea_fig-55.png" class="align-center" src="../_images/eea_fig-55.png" />
 <section id="low-pass-filters">
-<h3><a class="toc-backref" href="#id10">Low-pass filters</a><a class="headerlink" href="#low-pass-filters" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id12">Low-pass filters</a><a class="headerlink" href="#low-pass-filters" title="Permalink to this headline">¶</a></h3>
 <p>These filters block high frequencies. This is basically another voltage divider, with a frequency-dependent component. You’ve already seen one of these when you charged/discharged a capacitor! The exponential decay of the capacitor gets convolved with our signal. Remember that the impedance of our capacitor decreases as the signal frequency increases. At low frequencies, the high impedance of the capacitor means we get a large voltage drop over the capacitor, and more of our input signal can reach our Vout.</p>
 <a class="reference external image-reference" href="https://www.falstad.com/circuit/e-filt-lopass.html"><img alt="../_images/eea_fig-56.png" class="align-center" src="../_images/eea_fig-56.png" style="width: 426.0px; height: 171.0px;" /></a>
 </section>
 <section id="high-pass-filters">
-<h3><a class="toc-backref" href="#id11">High-pass filters</a><a class="headerlink" href="#high-pass-filters" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id13">High-pass filters</a><a class="headerlink" href="#high-pass-filters" title="Permalink to this headline">¶</a></h3>
 <p>This is the same <a class="reference external" href="https://www.falstad.com/circuit/e-filt-hipass.html">idea.</a>
 With increasing signal frequency, the impedance of the capacitor decreases (day 1), reducing the voltage drop over the capacitor and sending more signal to the output.</p>
 <a class="reference external image-reference" href="https://www.falstad.com/circuit/e-filt-hipass.html"><img alt="../_images/eea_fig-57.png" class="align-center" src="../_images/eea_fig-57.png" style="width: 496.99999999999994px; height: 199.5px;" /></a>
