@@ -439,7 +439,7 @@ If you need to, refer back to the <a class="reference external" href="https://le
 <p>2C: Should see a clear square wave of around 3.3 amplitude.</p>
 <img alt="../_images/eea_fig-66.png" class="align-center" src="../_images/eea_fig-66.png" />
 <p>NB: sometimes connecting the ground directly to the Teensy causes it to charge (you can see it with the scope) and it can end up disconnecting from the PC and making a mess. They don’t actually need the ground of the scope connected to see the large sine wave because of the scope’s high input impedance. That might be confusing now, but should be clearer after talking about impedance tomorrow.</p>
-<p>!!! If a student’s scope isn’t responding to any input, before panicking check that they are not using the ‘automotive’ version of the Picoscope software as this will make the scope look dead.!!!</p>
+<p>!!! If a student’s scope isn’t responding to any input, before panicking check that they are not using the ‘automotive’ version of the Picoscope software as this will make the scope look dead.</p>
 </div>
 <p>We’ll now use the Teensy microcontroller to output a sine wave, instead of the blink example.</p>
 <div class="exercise docutils container">
@@ -467,10 +467,18 @@ Ohm’s law describes how potential (V), current (I) and resistance (R) are rela
 <div class="math notranslate nohighlight">
 \[V = IR\]</div>
 <p>When looking at a whole circuit, we can use this to calculate how much current will flow. Here is a simple circuit with a battery and two resistors. Current flows from the positive terminal of the battery to ground, which is the negative terminal of the battery.</p>
+<a class="reference external image-reference" href="https://tinyurl.com/y4r8nsnj"><img alt="../_images/eea_fig-16.png" class="align-center" src="../_images/eea_fig-16.png" /></a>
+<p>3A. Click on the image to go to the simulator.
+Right-click on the top wire in the circuit, and then select Edit to display the current through that wire. Double-click on either of the resistors to decrease their value and see how the current in the circuit responds.</p>
 </section>
 <section id="resistors">
 <h2><a class="toc-backref" href="#id6">4.      Resistors</a><a class="headerlink" href="#resistors" title="Permalink to this headline">¶</a></h2>
 <p>Here’s another simulation demonstrating Ohm’s law. This time, the current moves from a 5 Volt voltage source (bright green) into ground (grey, earth), across one of two resistors.</p>
+<a class="reference external image-reference" href="https://www.falstad.com/circuit/e-ohms.html"><img alt="../_images/eea_fig-17.png" class="align-center" src="../_images/eea_fig-17.png" /></a>
+<div class="exercise docutils container">
+<p>4A.   Display the voltage and current over both resistors in the ‘scope’ (right click/show in new scope). What will happen to the voltage over the left resistor if you double its resistance? What will happen to the current?</p>
+<p>4B.   What will happen to the voltage and current over the left-hand resistor? Double the value in the simulator and see if your predictions were correct.</p>
+</div>
 <div class="tanote admonition">
 <p class="admonition-title">TA Note</p>
 <blockquote>
@@ -488,8 +496,8 @@ Ohm’s law describes how potential (V), current (I) and resistance (R) are rela
 <img alt="../_images/eea_fig-18.png" class="align-center" src="../_images/eea_fig-18.png" />
 <p>That means that, in a circuit with multiple resistors in series, the ratio of their resistances determines how much voltage will drop over each. We can therefore split up (divide) the voltage from a source across resistors. If we measure the voltage in between these resistors as V<sub>out</sub>:</p>
 <div class="math notranslate nohighlight">
-\[|Vout| = |Vin| \frac{R1}{R1+R2}\]</div>
-<p>5A.     Using the simulator (here’s an empty full-screen <a class="reference external" href="https://tinyurl.com/y477e9qd">https://tinyurl.com/y477e9qd</a>) build a voltage divider circuit in which you use a battery and two resistors to provide an 800 mV output voltage V<sub>out</sub>.</p>
+\[|Vout| = |Vin| \frac{R2}{R1+R2}\]</div>
+<p>5A.     Using the simulator (here’s an empty full-screen <a class="reference external" href="https://tinyurl.com/y477e9qd">https://tinyurl.com/y477e9qd</a>) build a voltage divider circuit in which you use a 3V battery and two resistors to provide an 800 mV output voltage V<sub>out</sub>.</p>
 <div class="tanote admonition">
 <p class="admonition-title">TA Note</p>
 <p>Voltage divider circuits:
@@ -567,8 +575,8 @@ Here is a demo where an alternating signal increases and decreases in frequency.
 <div class="exercise docutils container">
 <a class="reference external image-reference" href="https://tinyurl.com/y3sbgfl6"><img alt="../_images/eea_fig-25.png" class="align-center" src="../_images/eea_fig-25.png" /></a>
 <p>Here are two circuits, both provided by an alternating voltage source with a different frequency. In the scope below, the voltage trace of the source and the capacitor are plotted.</p>
-<p>7B. Change the simulator oscilloscope to display the current in the circuit (for instance the current flowing through the stretch of wire).</p>
-<p>7C. Add a third circuit, powered by an alternating voltage source of 120 Hz. What happens as the frequency increases?</p>
+<p>8A. Change the simulator oscilloscope to display the current in the circuit (for instance the current flowing through the stretch of wire).</p>
+<p>8B. Add a third circuit, powered by an alternating voltage source of 120 Hz. What happens as the frequency increases?</p>
 </div>
 <p>The impedance magnitude of a capacitor, also called reactance (X<sub>c</sub>), depends on:</p>
 <div class="math notranslate nohighlight">
@@ -609,7 +617,7 @@ You may have to change the simulation speed using the red slider at the top righ
 <li><p>R<sub>e</sub>: electrode tip resistance, in parallel with C<sub>e</sub>. ~ 100 MOhm.</p></li>
 </ul>
 <p>10B.        Edit the alternating voltage supply to provide 1V at 1Khz, mimicking the signal coming from your cell. 1V is larger than ephys signals, but makes the current flow easier to see. Change the sliders for simulation speed and current speed until you can see where the current is flowing.</p>
-<p>10C. What happens if you delete R<sub>m</sub>?</p>
+<p>10C. What happens if you delete R<sub>e</sub>?</p>
 <p>10D. Can you change this circuit from a polarising, tungsten electrode, to a circuit representing a nonpolarizable electrode?</p>
 <div class="tanote admonition">
 <p class="admonition-title">TA Note</p>
