@@ -33,7 +33,7 @@
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Terms and Conditions" href="disclaimer_terms_conditions.html" />
+    <link rel="next" title="Firmata" href="Firmata.html" />
     <link rel="prev" title="Exercises Day 3 TA" href="exday3TA.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -195,7 +195,12 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Firmata.html">
+     Firmata
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -422,7 +427,7 @@
 <section id="exercise-5-touch-detector">
 <h4>Exercise 5: Touch detector<a class="headerlink" href="#exercise-5-touch-detector" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li><p>Upload this <span class="xref std std-ref">Firmata</span> to your Teensy</p></li>
+<li><p>Upload this <a class="reference internal" href="Firmata.html#firmata"><span class="std std-ref">Firmata</span></a> to your Teensy</p></li>
 <li><p>In Bonsai, insert an AnalogInput node and configure it to Analog Pin 9.</p></li>
 <li><p>Run the workflow and tap the pin on the Teensy.</p></li>
 <li><p>Use the GreaterThan node to create a ‘touch detector’ that gives a 1 each time you tap the teensy.</p></li>
@@ -430,7 +435,7 @@
 </ul>
 <p>This workflow is detecting each sample.</p>
 <ul class="simple">
-<li><p>Use the ‘Buffer (Dsp)’ and ‘Average’ nodes to run the detection over more than 1 sample. You will need to output only the first value from Average (it will be default return 4 values and then the other nodes won’t work.) Do this by right-clicking on Average/Output/Val0.</p></li>
+<li><p>Use the ‘Buffer (Dsp)’ and ‘Average’ nodes to run the detection over more than 1 sample. You will need to output only the first value from Average (it will by default return 4 values, and then the other nodes won’t work as they can only receive 1 value.) Do this by right-clicking on Average/Output/Val0.</p></li>
 <li><p>Run the workflow and tap the pin on the Teensy.</p></li>
 </ul>
 <details><summary> Workflow here:
@@ -462,7 +467,7 @@
 <div class="exercise docutils container">
 <ol class="upperalpha simple">
 <li><p>Connect the output from your amplifier to an analog input node on the Teensy as shown below. This is a 220 Ohm resistor across the instrumentation amplifier, and a voltage divider made of two equal resistors (anything above 1KOhm, see the text on ‘shifting the bipolar signal up’ below).</p></li>
-<li><p>Upload ‘Firmata.ino’ to the Teensy (code here: <span class="xref std std-ref">Firmata</span> )</p></li>
+<li><p>Upload ‘Firmata.ino’ to the Teensy (code here: <a class="reference internal" href="Firmata.html#firmata"><span class="std std-ref">Firmata</span></a> )</p></li>
 <li><p>Open Bonsai and create an Analog Input node. Double-click to visualise your signal.</p></li>
 <li><p>Connect this to a ‘Csv Writer’ node to save your signals.</p></li>
 </ol>
@@ -488,10 +493,10 @@
             <p class="prev-next-title">Exercises Day 3 TA</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="disclaimer_terms_conditions.html" title="next page">
+    <a class='right-next' id="next-link" href="Firmata.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Terms and Conditions</p>
+        <p class="prev-next-title">Firmata</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Safety &amp; Good Practices &#8212; Open Ephys EEA 2021 0.0.0 documentation</title>
+    <title>Firmata &#8212; Open Ephys EEA 2021 0.0.0 documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -33,8 +33,8 @@
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Software Requirements" href="software_requirements.html" />
-    <link rel="prev" title="Course Materials" href="eeadocsindex.html" />
+    <link rel="next" title="Terms and Conditions" href="disclaimer_terms_conditions.html" />
+    <link rel="prev" title="Exercises Day 4 TA" href="exday4TA.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -129,8 +129,8 @@
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
     <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="safety.html">
    Safety &amp; Good Practices
   </a>
  </li>
@@ -186,18 +186,18 @@
    Exercises Day 3 TA
   </a>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="exday4TA.html">
    Exercises Day 4 TA
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Firmata.html">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Firmata
     </a>
    </li>
@@ -217,29 +217,9 @@
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
 
 <nav id="bd-toc-nav">
-    <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#short-circuiting">
-   1.      Short-circuiting
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#emg-electrodes">
-   2.      EMG electrodes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#amplifiers">
-   3.      Amplifiers
-  </a>
- </li>
-</ul>
-
+    
 </nav>
               </div>
               
@@ -259,29 +239,36 @@
               
               <div>
                 
-  <section id="safety-good-practices">
-<span id="refeeasafety"></span><h1>Safety &amp; Good Practices<a class="headerlink" href="#safety-good-practices" title="Permalink to this headline">¶</a></h1>
-<p>Read this carefully before starting the exercises, to make sure you protect yourself &amp; the equipment.
-Working with these circuits is safe as long as you follow these rules.</p>
-<section id="short-circuiting">
-<h2>1.      Short-circuiting<a class="headerlink" href="#short-circuiting" title="Permalink to this headline">¶</a></h2>
-<ol class="upperalpha simple">
-<li><p>Never connect the + and – terminals of your batteries, without a resistor in between. A ‘short-circuit’ is a path of very low resistance, such as a wire. Because of the low resistance, a lot of current can flow (Ohm’s law!). This current will do things like heat up and melt stuff (like your battery holders) <em>very</em> quickly.</p></li>
-<li><p>It’s good practice to wire up your circuit first, and double check connections, before connecting your batteries. Disconnect them again before changing your circuit.</p></li>
-<li><p>When you are not using the batteries, either remove them from the battery holder or cover the ends of the wires of the batter holder in tape, to make sure they cannot touch.</p></li>
-</ol>
-</section>
-<section id="emg-electrodes">
-<h2>2.      EMG electrodes<a class="headerlink" href="#emg-electrodes" title="Permalink to this headline">¶</a></h2>
-<p>These measurements involve attaching yourself to a circuit, so we have to be careful.
-A.      Never use anything other than the recommended batteries to power your circuit. Do not connect your circuit to mains supply ever, whether for power, ground, or anything.
-B.      Only connect the EMG electrodes to one arm. Don’t attach them to both arms or anywhere else. This is to avoid any currents travelling across your heart.
-C.      If you are using a laptop, disconnect your laptop charger &amp; run from battery while the electrodes are attached to you. This is to prevent any surges from mains supply from backpropagating through your laptop, to you.</p>
-</section>
-<section id="amplifiers">
-<h2>3.      Amplifiers<a class="headerlink" href="#amplifiers" title="Permalink to this headline">¶</a></h2>
-<p>These can be damaged if you provide too much voltage. The configurations we give you in the exercises are ok to use, but double-check you have them wired up correctly before attaching the batteries. If you want to try something new, check the data sheets for the amplifiers first, they will tell you what voltages the amplifiers can handle.</p>
-</section>
+  <section id="firmata">
+<span id="id1"></span><h1>Firmata<a class="headerlink" href="#firmata" title="Permalink to this headline">¶</a></h1>
+<p>// Copy this text to a new sketch in the Arduino software (clear the default ‘void loop etc first) and save as Firmata.ino</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &lt;Firmata.h&gt;</span>
+<span class="n">byte</span> <span class="n">analogPin</span><span class="p">;</span>
+<span class="n">void</span> <span class="n">analogWriteCallback</span><span class="p">(</span><span class="n">byte</span> <span class="n">pin</span><span class="p">,</span> <span class="nb">int</span> <span class="n">value</span><span class="p">)</span>
+<span class="p">{</span>
+ <span class="n">pinMode</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+ <span class="n">analogWrite</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">void</span> <span class="n">setup</span><span class="p">()</span>
+<span class="p">{</span>
+ <span class="n">Firmata</span><span class="o">.</span><span class="n">setFirmwareVersion</span><span class="p">(</span><span class="n">FIRMATA_MAJOR_VERSION</span><span class="p">,</span> <span class="n">FIRMATA_MINOR_VERSION</span><span class="p">);</span>
+ <span class="n">Firmata</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">ANALOG_MESSAGE</span><span class="p">,</span> <span class="n">analogWriteCallback</span><span class="p">);</span>
+ <span class="n">Firmata</span><span class="o">.</span><span class="n">begin</span><span class="p">();</span>
+ <span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">void</span> <span class="n">loop</span><span class="p">()</span>
+<span class="p">{</span>
+ <span class="k">while</span> <span class="p">(</span><span class="n">Firmata</span><span class="o">.</span><span class="n">available</span><span class="p">())</span> <span class="p">{</span>
+   <span class="n">Firmata</span><span class="o">.</span><span class="n">processInput</span><span class="p">();</span>
+ <span class="p">}</span>
+ <span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+ <span class="k">for</span> <span class="p">(</span><span class="n">analogPin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">analogPin</span> <span class="o">&lt;</span> <span class="n">TOTAL_ANALOG_PINS</span><span class="p">;</span> <span class="n">analogPin</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+   <span class="n">Firmata</span><span class="o">.</span><span class="n">sendAnalog</span><span class="p">(</span><span class="n">analogPin</span><span class="p">,</span> <span class="n">analogRead</span><span class="p">(</span><span class="n">analogPin</span><span class="p">));</span>
+ <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </section>
 
 
@@ -290,17 +277,17 @@ C.      If you are using a laptop, disconnect your laptop charger &amp; run from
               
               <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="eeadocsindex.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="exday4TA.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Course Materials</p>
+            <p class="prev-next-title">Exercises Day 4 TA</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="software_requirements.html" title="next page">
+    <a class='right-next' id="next-link" href="disclaimer_terms_conditions.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Software Requirements</p>
+        <p class="prev-next-title">Terms and Conditions</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
