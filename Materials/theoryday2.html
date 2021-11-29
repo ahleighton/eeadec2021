@@ -301,14 +301,15 @@
 </ul>
 <section id="impedance-ratios-determine-signal-transmission">
 <h2><a class="toc-backref" href="#id1">Impedance ratios determine signal transmission</a><a class="headerlink" href="#impedance-ratios-determine-signal-transmission" title="Permalink to this headline">¶</a></h2>
-<p>Faithfully transferring the signal means not losing (much) signal between V<sub>ec</sub>, V<sub>in</sub>, and V<sub>out</sub>. This is all based on the idea of voltage dividers; that the voltage between two impedances in series will be determined by the ratio of their impedances.</p>
+<img alt="../_images/eea_fig-6.png" class="align-center" src="../_images/eea_fig-6.png" />
+<p>The signal V<sub>ec</sub> (V electrode) is measured at the electrode tip. V<sub>in</sub> is the voltage after the electrode, before the acquisition system. V<sub>out</sub> is the signal output of the acquisition system. Faithfully transferring the signal means not losing (much) signal between V<sub>ec</sub>, V<sub>in</sub>, and V<sub>out</sub>. This is all based on the idea of voltage dividers; that the voltage between two impedances in series will be determined by the ratio of their impedances.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <center><iframe width="560" height="340" src="https://www.youtube.com/embed/fVloDI4b1ts" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 <br><section id="why-is-impedance-important">
 <h3><a class="toc-backref" href="#id2">Why is impedance important?</a><a class="headerlink" href="#why-is-impedance-important" title="Permalink to this headline">¶</a></h3>
-<p>The signal V<sub>ec</sub> is measured at the electrode tip. It must travel through the electrode, to V<sub>in</sub>, the voltage before the acquisition system itself. From there, currents coming from our neurons travel to ground. They can do so either by passing through our acquisition system, or (in parallel) they can be lost to ground through shunt capacitance (C<sub>s</sub>).</p>
+<p>The figure below includes the equivalent circuit of the electrode, as discussed yesterday. The signal V<sub>ec</sub> must travel through the electrode, to V<sub>in</sub>, the voltage before the acquisition system itself. From there, currents coming from our neurons travel to ground. They can do so either by passing through our acquisition system, or (in parallel) they can be lost to ground through shunt capacitance (C<sub>s</sub>). Shunt capacitances are created by cables or the sides of electrodes; they are ‘accidental’ but unavoidable capacitances in the system.</p>
 <img alt="../_images/eea_fig-9.png" class="align-center" src="../_images/eea_fig-9.png" />
 <p>We can replace these components with a representation of the impedance (Z) they provide.</p>
 <img alt="../_images/eea_fig-77.png" class="align-center" src="../_images/eea_fig-77.png" />
@@ -349,7 +350,7 @@ How can we increase the value of C<sub>e</sub>?</p>
 </section>
 <section id="shunt-impedance">
 <h3><a class="toc-backref" href="#id4">Shunt Impedance</a><a class="headerlink" href="#shunt-impedance" title="Permalink to this headline">¶</a></h3>
-<p>Shunt impedance is the total impedance of shunt capacitance C<sub>s</sub> and shunt resistance R<sub>sh</sub>. These are both routes to ground outside of the intended acquisition system. At the high frequencies (1kHz) we are interested in, the capacitive component will have low impedance, and will therefore have more effect than the resistive component, so R<sub>sh</sub> is often ignored.</p>
+<p>Shunt impedance is the total impedance of shunt capacitance C<sub>s</sub> and shunt resistance R<sub>sh</sub>. These are both routes to ground outside of the intended acquisition system. At the high frequencies (1kHz) we are interested in, the capacitive component will have relatively low impedance. It will therefore have more effect than the resistive component, so R<sub>sh</sub> is often ignored.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
