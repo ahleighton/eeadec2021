@@ -320,11 +320,17 @@ If you need to, refer back to the <a class="reference external" href="https://le
 <p>The kit includes a Teensy pinout card. This diagram (‘pinout’) shows us what each pin of the Teensy can do. Each gold circle (‘via’) on this pinout represents an input or output of the Teensy.</p>
 <img alt="../_images/eea_fig-11.png" class="align-center" src="../_images/eea_fig-11.png" />
 <p>Your teensy already has header pins attached, so that you can click it into your breadboard.</p>
-<p>It’s important to distinguish between:
-* Ground pins (GND)
-* Analog pins, that can read varying voltages, such as a wave. There is also an analog ground.
-*       Digital pins, that can read or write HIGH or LOW values.</p>
+<p>It’s important to distinguish between:</p>
+<ul class="simple">
+<li><p>Ground pins (GND)</p></li>
+<li><p>Analog pins, that can read varying voltages, such as a wave. There is also an analog ground.</p></li>
+<li><p>Digital pins, that can read or write HIGH or LOW values.</p></li>
+</ul>
 <p>We’re going to attach the Teensy to our solderless breadboard. Removing and replacing the teensy can sometimes bend the pins, so we’re going to leave it here for the whole course.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you have to remove the teensy from the board, never hold it by the USB port, as it can easily snap off!</p>
+</div>
 <img alt="../_images/eea_fig-10.png" class="align-center" src="../_images/eea_fig-10.png" />
 <div class="exercise docutils container">
 <p>1D.   Attach the teensy to the left of your breadboard as shown above. If you make sure the breadboard is in the same orientation as this schematic, it will make the following exercises easier to follow.</p>
@@ -517,14 +523,13 @@ Here is a demo where an alternating signal increases and decreases in frequency.
 <div class="exercise docutils container">
 <a class="reference external image-reference" href="https://tinyurl.com/y5kq7yct"><img alt="../_images/eea_fig-26.png" class="align-center" src="../_images/eea_fig-26.png" /></a>
 <p>9A.   Try changing the capacitance values C for the first capacitor. How does this change your output voltage?</p>
-<p>In the circuit below, you will see a capacitor and a resistor in parallel. The voltage source alternates at 20Hz, going from -10 to +10 volts.
-The current travels over the resistor or via the capacitor to ground.</p>
-<blockquote>
-<div><a class="reference external image-reference" href="https://tinyurl.com/yhu578fx"><img alt="../_images/eea_fig-74.png" class="align-center" src="../_images/eea_fig-74.png" /></a>
-</div></blockquote>
-<p>9B.  Increase the value of the resistor to 200KOhm. What happens to the current?</p>
-<p>9C.  Put the resistor back to 1KOhm. Now, increase the capacitance of the capacitor to around 10mF. What happens to the current?</p>
-<p>9D.  Return the values to 1KOhm and 10uF.</p>
+</div>
+<p>In the circuit below, you will see a capacitor and a resistor in parallel. The voltage source alternates at 20Hz, going from -10 to +10 volts. The current travels over the resistor or via the capacitor to ground.</p>
+<a class="reference external image-reference" href="https://tinyurl.com/yhu578fx"><img alt="../_images/eea_fig-74.png" class="align-center" src="../_images/eea_fig-74.png" /></a>
+<div class="exercise docutils container">
+<p>9B.  Increase the value of the resistor to 200kOhm. What happens to the current?</p>
+<p>9C.  Put the resistor back to 1kOhm. Now, increase the capacitance of the capacitor to around 10mF. What happens to the current?</p>
+<p>9D.  Return the values to 1kOhm and 10uF.</p>
 <p>Change the frequency of the alternating signal to:
 - 1000 Hz (action potentials!)
 - 1 Hz
