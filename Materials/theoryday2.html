@@ -309,7 +309,7 @@
 <center><iframe width="560" height="340" src="https://www.youtube.com/embed/fVloDI4b1ts" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 <br><section id="why-is-impedance-important">
 <h3><a class="toc-backref" href="#id2">Why is impedance important?</a><a class="headerlink" href="#why-is-impedance-important" title="Permalink to this headline">¶</a></h3>
-<p>The figure below includes the equivalent circuit of the electrode, as discussed yesterday. The signal V<sub>ec</sub> must travel through the electrode, to V<sub>in</sub>, the voltage before the acquisition system itself. From there, currents coming from our neurons travel to ground. They can do so either by passing through our acquisition system, or (in parallel) they can be lost to ground through shunt capacitance (C<sub>s</sub>). Shunt capacitances are created by cables or the sides of electrodes; they are ‘accidental’ but unavoidable capacitances in the system.</p>
+<p>The figure below includes the equivalent circuit of the electrode, as discussed yesterday. The signal V<sub>ec</sub> must travel through the electrode, to V<sub>in</sub>, the voltage before the acquisition system itself. From there, currents coming from our neurons travel to ground. They can do so either by passing through our acquisition system, or (in parallel) they can be lost to ground through shunt impedance. Shunt impedance is primarily capacitive (see section below) and represented as (C<sub>s</sub>). Shunt capacitances are created by cables or the sides of electrodes; they are ‘accidental’ but unavoidable capacitances in the system.</p>
 <img alt="../_images/eea_fig-9.png" class="align-center" src="../_images/eea_fig-9.png" />
 <p>We can replace these components with a representation of the impedance (Z) they provide.</p>
 <img alt="../_images/eea_fig-77.png" class="align-center" src="../_images/eea_fig-77.png" />
@@ -327,7 +327,7 @@ We can simplify our circuit by combining their impedances and calling it Z<sub>a
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>If Z<sub>a</sub>’ is not substantially greater than Z<sub>e</sub>, V<sub>in</sub> will be much lower than V<sub>ec</sub>. To have high Z<sub>a</sub>’, we need amplifiers with high input impedance and low shunt capacitance (high shunt impedance).</p>
+<p>If Z<sub>a</sub>’ is not substantially greater than Z<sub>e</sub>, V<sub>in</sub> will be much lower than V<sub>ec</sub>. To have high Z<sub>a</sub>’, we need amplifiers with high input impedance and high shunt impedance.</p>
 </section>
 <section id="electrode-impedance">
 <h3><a class="toc-backref" href="#id3">Electrode Impedance</a><a class="headerlink" href="#electrode-impedance" title="Permalink to this headline">¶</a></h3>
@@ -428,12 +428,7 @@ How can we increase the value of C<sub>e</sub>?</p>
 <li><p>Increases the range of the signal to fit the dynamic range of our digitizer</p></li>
 </ul>
 <center><iframe width="560" height="340" src="https://www.youtube.com/embed/NP6nE5P82e8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
-<br><p>Here is the simulator circuit used in the video above. You should see that the operational amplifier stops the cable from drawing current from the electrode, and that the operational amplifier instead manages to ‘drive’ the cable effortlessly, by providing a lot of current.</p>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<a class="reference external image-reference" href="https://tinyurl.com/ygpje26o"><img alt="../_images/eea_fig-30.png" class="align-center" src="../_images/eea_fig-30.png" /></a>
-</section>
+<br></section>
 </section>
 </section>
 

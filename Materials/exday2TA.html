@@ -163,6 +163,11 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#without-an-amplifier">
+     Without an amplifier
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#build-voltage-rails">
      Build voltage rails
     </a>
@@ -170,11 +175,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#add-bypass-capacitors">
      Add bypass capacitors
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#build-the-long-wire-equivalent-circuit">
-     Build the ‘long wire’ equivalent circuit
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -216,9 +216,9 @@
 </li>
 <li><p><a class="reference internal" href="#operational-amplifiers" id="id3">2. Operational Amplifiers</a></p>
 <ul>
-<li><p><a class="reference internal" href="#build-voltage-rails" id="id4">Build voltage rails</a></p></li>
-<li><p><a class="reference internal" href="#add-bypass-capacitors" id="id5">Add bypass capacitors</a></p></li>
-<li><p><a class="reference internal" href="#build-the-long-wire-equivalent-circuit" id="id6">Build the ‘long wire’ equivalent circuit</a></p></li>
+<li><p><a class="reference internal" href="#without-an-amplifier" id="id4">Without an amplifier</a></p></li>
+<li><p><a class="reference internal" href="#build-voltage-rails" id="id5">Build voltage rails</a></p></li>
+<li><p><a class="reference internal" href="#add-bypass-capacitors" id="id6">Add bypass capacitors</a></p></li>
 <li><p><a class="reference internal" href="#replace-the-long-wire-with-headstage" id="id7">Replace the ‘long wire’ with ‘headstage’</a></p></li>
 </ul>
 </li>
@@ -227,10 +227,10 @@
 <section id="impedance-ratios">
 <h2><a class="toc-backref" href="#id1">1. Impedance Ratios</a><a class="headerlink" href="#impedance-ratios" title="Permalink to this headline">¶</a></h2>
 <p>Yesterday, we made the equivalent circuit of a polarising electrode connected to ground.
-Here is that circuit, with shunt capacitance added of 100 pF:</p>
+Here is that circuit, with shunt impedance added of 100 pF:</p>
 <a class="reference external image-reference" href="https://tinyurl.com/y447ugwt"><img alt="../_images/day2circuit.png" class="align-center" src="../_images/day2circuit.png" /></a>
 <div class="exercise docutils container">
-<p>1A. What is shunt capacitance?</p>
+<p>1A. What is shunt impedance?</p>
 <p>1B. What % of our signal are we losing between Vec and Vin? Why?</p>
 <p>1C. What could we change to increase the signal at Vin?</p>
 <p>1D. The tips of certain electrodes, e.g. nichrome tetrodes, can be electroplated in a thin layer of gold. This ‘goldplating’ increases the surface area of the tip, creating more space to separate charge. This increases tip capacitance by around 100x. Make this change in the circuit. How similar are Vec and Vin now?</p>
@@ -238,13 +238,13 @@ Here is that circuit, with shunt capacitance added of 100 pF:</p>
 <div class="tanote admonition">
 <p class="admonition-title">TA Note</p>
 <p>1B: Should be 50 uV left of our 5V signal.</p>
-<p>1C: The capacitor of our electrode and the shunt capacitance are forming a voltage divider. Changing the impedance ratio changes the Vin.</p>
+<p>1C: The capacitor of our electrode and the shunt impedance are forming a voltage divider. Changing the impedance ratio changes the Vin.</p>
 <p>1D: Gold plated electrode circuit: increases capacitance, decreases impedance.  <a class="reference external" href="https://tinyurl.com/y5y8chql">https://tinyurl.com/y5y8chql</a>
 Students can get impedance and capacitance mixed up and forget they go in opposite directions.</p>
 </div>
 <section id="drawing-current">
 <h3><a class="toc-backref" href="#id2">Drawing Current</a><a class="headerlink" href="#drawing-current" title="Permalink to this headline">¶</a></h3>
-<p>Let’s do a recording! We’ll take our electrode, and attach it through a long wire to a recording system (the recording system has an analog to digital converter, ADC, and a recording computer).</p>
+<p>Let’s do a recording! We’ll take our electrode, and attach it through a long wire to a recording system (the recording system has an analog to digital converter, ADC, and a recording computer). The leakage resistance here is because the recording system is also connected to ground.</p>
 <a class="reference external image-reference" href="https://tinyurl.com/y6864vle"><img alt="../_images/day2withac.png" class="align-center" src="../_images/day2withac.png" /></a>
 <div class="exercise docutils container">
 <p>1E. How much of the voltage at the electrode, Vec, are we recording at Vout?</p>
@@ -262,56 +262,29 @@ Students can get impedance and capacitance mixed up and forget they go in opposi
 </section>
 <section id="operational-amplifiers">
 <h2><a class="toc-backref" href="#id3">2. Operational Amplifiers</a><a class="headerlink" href="#operational-amplifiers" title="Permalink to this headline">¶</a></h2>
-<p>Let’s build this circuit in real life, on the breadboard. We’ll treat the ‘Blink’ example as our neuronal data and see what happens to this signal if we just have a wire, and then see the effect of replacing this wire with an op-amp.</p>
+<p>Let’s build a slightly simplified version of these circuits in real life, on the breadboard. We’ll treat the ‘Blink’ example as our neuronal data and see what happens to this signal if we just have a wire, and then see the effect of replacing this wire with an op-amp. We’ll simplify our electrode circuit to a single resistor.</p>
+<a class="reference external image-reference" href="https://tinyurl.com/y5b7nfuv"><img alt="../_images/eea_fig-41.png" class="align-center" src="../_images/eea_fig-41.png" /></a>
 <ul class="simple">
-<li><p>‘Neuron’  = Digital output from Teensy</p></li>
-<li><p>‘Electrode’ = 1 MOhm resistor</p></li>
+<li><p>‘Neuron’  = Digital blink output from Teensy</p></li>
+<li><p>‘Electrode’ = 100 kOhm resistor</p></li>
 <li><p>‘Shunt’ = 22kOhm resistor</p></li>
+<li><p>‘Leak’ = 220Ohm resistor</p></li>
+<li><p>‘Recording system’ = the Picoscope</p></li>
 </ul>
-<section id="build-voltage-rails">
-<h3><a class="toc-backref" href="#id4">Build voltage rails</a><a class="headerlink" href="#build-voltage-rails" title="Permalink to this headline">¶</a></h3>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Make sure that the pins from the batteries do not touch, and if they’re not in use, best to put some tape on them so they don’t touch things. ‘Short-circuiting’ the batteries (connecting them without any sort of resistance) causes a huge current to flow from the + to -, enough to… melt stuff.</p>
-</div>
-<p>First, we need to make the ‘rails’ that will provide the voltage for our op-amp. Eventually, for our EMG circuit, we will need to have a positive and negative voltage ready, so that we can amplify a signal that lives around some reference level that we shall call 0 volt. If we only have 0 and +3V, then any negative signal will floor and stay at 0.</p>
-<p>To do this we use a common trick and turn two regular power supplies into a bipolar power supply. In our case we use batteries, because they’re cheap and pretty much fully noise-free. Check which way up your breadboard is (keep the blue line at the top). Following the figures precisely will make debugging much easier later on.</p>
+<section id="without-an-amplifier">
+<h3><a class="toc-backref" href="#id4">Without an amplifier</a><a class="headerlink" href="#without-an-amplifier" title="Permalink to this headline">¶</a></h3>
 <div class="exercise docutils container">
-<p>2A. Connect the battery holders as follows:</p>
-<ul class="simple">
-<li><p>One pair of batteries provides 3V relative to ground, 0V.</p></li>
-<li><p>Both ground rails are connected through a wire.</p></li>
-<li><p>The second pair of batteries is reversed to provide -3V relative to ground, so that we get a + and a – voltage.</p></li>
-<li><p>Remember or label which side is +3 and which is -3</p></li>
-</ul>
-<img alt="../_images/eea_fig-35.png" class="align-center" src="../_images/eea_fig-35.png" />
-</div>
-</section>
-<section id="add-bypass-capacitors">
-<h3><a class="toc-backref" href="#id5">Add bypass capacitors</a><a class="headerlink" href="#add-bypass-capacitors" title="Permalink to this headline">¶</a></h3>
-<p>Bypass capacitors are small capacitors that act like little secondary batteries. In our case we’ll add two 100nF (marked 104) caps, one to each rail, so GND to 3V and GND to -3V. The reason is that the batteries we use have what’s called a high ESR - ‘equivalent series resistance’ and some capacitance, so they are not great at quickly providing current. This means that when our op-amp starts working, it can run out of current for a very short time, until the battery can drive the rails back to their original voltage. This is bad for the signal quality and causes all kinds of issues. So, we give the rails the ability to very quickly provide a small amount of current from these small capacitors. We’re exploiting the fact that these caps have very low ESR and can provide current pretty much instantaneously. If the battery briefly can’t provide current, the bypass capacitors will discharge, providing quick back-up current. The fact that they’re too small to power anything for more than a millisecond does not matter here, at that point the batteries have caught up.</p>
-<div class="exercise docutils container">
-<p>2B. Add two 100nF (marked 104) caps, one to each rail, so connecting GND to 3V and connecting GND to -3V (see image below).</p>
-<img alt="../_images/eea_fig-36.png" class="align-center" src="../_images/eea_fig-36.png" />
-</div>
-</section>
-<section id="build-the-long-wire-equivalent-circuit">
-<h3><a class="toc-backref" href="#id6">Build the ‘long wire’ equivalent circuit</a><a class="headerlink" href="#build-the-long-wire-equivalent-circuit" title="Permalink to this headline">¶</a></h3>
-<p>We’re going to build the circuit below (note the square wave input, just like the blink example). We’re using resistors to model our electrode and shunt impedance voltage divider. For now, we don’t need the voltage rails, they will be used to power our amplifier later.</p>
-<img alt="../_images/eea_fig-37.png" class="align-center" src="../_images/eea_fig-37.png" />
-<div class="exercise docutils container">
-<p>2C.   Upload the Blink example to your teensy (or just run it if still loaded).</p>
+<p>2A.   Upload the Blink example to your teensy (or just run it if still loaded).</p>
 <p>Build the circuit below:</p>
 <ul class="simple">
-<li><p>Send the Teensy output through a 1MOhm resistor. This makes it behave a bit like a biological signal coming from an electrode.</p></li>
-<li><p>A 22kOhm resistor to ground simulates the signal lost to ground over a really long wire.</p></li>
-<li><p>Add one ‘readout’ wire connected to ground (for your oscilloscope ground lead)</p></li>
-<li><p>Connect a second readout wire so that you can measure the output voltage of your system.</p></li>
+<li><p>Send the Teensy output through a 100 KOhm resistor. This makes it behave a bit like a biological signal coming from an electrode.</p></li>
+<li><p>A 22kOhm resistor to ground simulates shunt impedance.</p></li>
+<li><p>A 220 Ohm resistor to ground simulates that your acquisition system is connected to ground (via some resistance).</p></li>
+<li><p>The yellow wires are ‘readout’ wires to connect your oscilloscope to.</p></li>
 </ul>
 <img alt="../_images/eea_fig-39.png" class="align-center" src="../_images/eea_fig-39.png" />
 <img alt="../_images/eea_fig-38.png" class="align-center" src="../_images/eea_fig-38.png" />
-<p>2D.   Now measure the output with the oscilloscope at the points marked by red arrows in the image below, and complete the first column of the table below:</p>
-<img alt="../_images/eea_fig-40.png" class="align-center" src="../_images/eea_fig-40.png" />
+<p>2B.   Now measure the output with the oscilloscope at the points marked by red arrows in the image below, and complete the first column of the table below:</p>
 <table class="colwidths-given table">
 <colgroup>
 <col style="width: 33%" />
@@ -333,14 +306,14 @@ Students can get impedance and capacitance mixed up and forget they go in opposi
 <td></td>
 </tr>
 <tr class="row-odd"><td><ol class="arabic simple" start="2">
-<li><p>Leg of 1 mOhm Resistor</p></li>
+<li><p>Readout Wire 1</p></li>
 </ol>
 </td>
 <td></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><ol class="arabic simple" start="3">
-<li><p>Readout Wire</p></li>
+<li><p>Readout Wire 2</p></li>
 </ol>
 </td>
 <td></td>
@@ -348,7 +321,35 @@ Students can get impedance and capacitance mixed up and forget they go in opposi
 </tr>
 </tbody>
 </table>
-<p>2E. How much signal is lost by this ‘recording system’?</p>
+<p>2C. How much signal is lost?</p>
+</div>
+</section>
+<section id="build-voltage-rails">
+<h3><a class="toc-backref" href="#id5">Build voltage rails</a><a class="headerlink" href="#build-voltage-rails" title="Permalink to this headline">¶</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Make sure that the pins from the batteries do not touch, and if they’re not in use, best to put some tape on them so they don’t touch things. ‘Short-circuiting’ the batteries (connecting them without any sort of resistance) causes a huge current to flow from the + to -, enough to… melt stuff.</p>
+</div>
+<p>Now, we need to make the ‘rails’ that will provide the voltage for our op-amp. Eventually, for our EMG circuit, we will need to have a positive and negative voltage ready, so that we can amplify a signal that lives around some reference level that we shall call 0 volt. If we only have 0 and +3V, then any negative signal will floor and stay at 0.</p>
+<p>To do this we use a common trick and turn two regular power supplies into a bipolar power supply. In our case we use batteries, because they’re cheap and pretty much fully noise-free. Check which way up your breadboard is (keep the blue line at the top). Following the figures precisely will make debugging much easier later on.</p>
+<div class="exercise docutils container">
+<p>2D. Connect the battery holders as follows:</p>
+<ul class="simple">
+<li><p>One pair of batteries provides 3V relative to ground, 0V.</p></li>
+<li><p>Both ground rails are connected through a wire.</p></li>
+<li><p>The second pair of batteries is reversed to provide -3V relative to ground, so that we get a + and a – voltage.</p></li>
+<li><p>Remember or label which side is +3 and which is -3</p></li>
+</ul>
+<img alt="../_images/eea_fig-35.png" class="align-center" src="../_images/eea_fig-35.png" />
+</div>
+</section>
+<section id="add-bypass-capacitors">
+<h3><a class="toc-backref" href="#id6">Add bypass capacitors</a><a class="headerlink" href="#add-bypass-capacitors" title="Permalink to this headline">¶</a></h3>
+<p>Bypass capacitors are small capacitors that act like little secondary batteries. In our case we’ll add two 100nF (marked 104) caps, one to each rail, so GND to 3V and GND to -3V. The reason is that the batteries we use have what’s called a high ESR - ‘equivalent series resistance’ and some capacitance, so they are not great at quickly providing current. This means that when our op-amp starts working, it can run out of current for a very short time, until the battery can drive the rails back to their original voltage. This is bad for the signal quality.
+So, we give the rails the ability to very quickly provide a small amount of current from these small capacitors. We’re exploiting the fact that these caps have very low ESR and can provide current pretty much instantaneously. If the battery briefly can’t provide current, the bypass capacitors will discharge, providing quick back-up current. The fact that they’re too small to power anything for more than a millisecond does not matter here, at that point the batteries have caught up.</p>
+<div class="exercise docutils container">
+<p>2E. Add two 100nF (marked 104) caps, one to each rail, so connecting GND to 3V and connecting GND to -3V (see image below).</p>
+<img alt="../_images/eea_fig-36.png" class="align-center" src="../_images/eea_fig-36.png" />
 </div>
 </section>
 <section id="replace-the-long-wire-with-headstage">
@@ -365,44 +366,8 @@ Students can get impedance and capacitance mixed up and forget they go in opposi
 <li><p>Feed the output of the op-amp, back into the – input.</p></li>
 </ul>
 <img alt="../_images/eea_fig-42.png" class="align-center" src="../_images/eea_fig-42.png" />
-<img alt="../_images/eea_fig-43.png" class="align-center" src="../_images/eea_fig-43.png" />
+<img alt="../_images/eea_fig-40.png" class="align-center" src="../_images/eea_fig-40.png" />
 <p>2G. Now measure the same three points as before and complete this table:</p>
-<table class="colwidths-given table">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>(+) Probe Location</p></th>
-<th class="head"><p>Long Wire</p></th>
-<th class="head"><p>Op-Amp</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><ol class="arabic simple">
-<li><p>Teensy Pin 13</p></li>
-</ol>
-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><ol class="arabic simple" start="2">
-<li><p>Leg of 1 mOhm Resistor</p></li>
-</ol>
-</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><ol class="arabic simple" start="3">
-<li><p>Readout Wire</p></li>
-</ol>
-</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
 </div>
 <div class="tanote admonition">
 <p class="admonition-title">TA Note</p>
