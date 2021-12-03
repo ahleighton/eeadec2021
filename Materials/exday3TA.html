@@ -214,7 +214,7 @@
 <a class="reference external image-reference" href="https://tinyurl.com/yedcnfp4"><img alt="../_images/eea_fig-44.png" class="align-center" src="../_images/eea_fig-44.png" /></a>
 <div class="exercise docutils container">
 <p>2A. Connect the reference and spike signal directly to the op-amp in open-loop configuration to subtract the reference. Connect the output of the amplifier to the PC. Run the simulation. What (in V) is the amplifier giving as output?</p>
-<p>2B. Try adding a negative feedback connection to stop the amplifier from saturating.</p>
+<p>2B. Try adding a wire (with no resistors) as a negative feedback connection to stop the amplifier from saturating.</p>
 <p>Why does this not work?</p>
 <p>2C. Using two resistors on each side of the ‘-’ input, make a voltage divider.
 What is the output now?</p>
@@ -241,7 +241,7 @@ Can we use this shiny new differential amplifier to record neural signals?</p>
 <div class="tanote admonition">
 <p class="admonition-title">TA Note</p>
 <p>2A: <a class="reference external" href="https://tinyurl.com/yemp5rve">https://tinyurl.com/yemp5rve</a></p>
-<p>2B: They need at least 1 resistor for the simulator to not give an error, because otherwise, they are asking the output of the amplifier, the - input and the reference input to all be at the same voltage when they are not, and the simulator can’t solve the circuit.</p>
+<p>2B: It doesn’t work if they only put a wire connection as feedback. They need at least 1 resistor for the simulator to not give an error, because otherwise, they are asking the output of the amplifier, the - input and the reference input to all be at the same voltage when they are not, and the simulator can’t solve the circuit.</p>
 <p>2C: <a class="reference external" href="https://tinyurl.com/yzz5ht4f">https://tinyurl.com/yzz5ht4f</a></p>
 <p>2D: <a class="reference external" href="https://tinyurl.com/yg63xmm5">https://tinyurl.com/yg63xmm5</a>  put ‘+’ in middle of voltage divider to ground. yay this is a diff amplifier!</p>
 <p>Differential amplifier: <a class="reference external" href="https://tinyurl.com/ygmn8kf2">https://tinyurl.com/ygmn8kf2</a></p>
