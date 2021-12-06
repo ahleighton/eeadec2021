@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Exercises Day 3 TA &#8212; Open Ephys EEA 2021 0.0.0 documentation</title>
+    <title>Exercises Day 3 &#8212; Open Ephys EEA 2021 0.0.0 documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -33,6 +33,8 @@
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Terms and Conditions" href="disclaimer_terms_conditions.html" />
+    <link rel="prev" title="Exercises Day 2" href="exday2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -73,7 +75,7 @@
  </a>
 </li>
 
-<li class="toctree-l1 nav-item">
+<li class="toctree-l1 current active nav-item">
  <a class="reference internal nav-link" href="eeadocsindex.html">
   Course Materials
  </a>
@@ -126,7 +128,54 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-    
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="safety.html">
+   Safety &amp; Good Practices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="software_requirements.html">
+   Software Requirements
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="theoryday1.html">
+   Theory Day 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="theoryday2.html">
+   Theory Day 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="theoryday3.html">
+   Theory Day 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="theoryday4.html">
+   Theory Day 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exday1.html">
+   Exercises Day 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exday2.html">
+   Exercises Day 2
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Exercises Day 3
+  </a>
+ </li>
+</ul>
+
   </div>
 </nav>
             </div>
@@ -183,8 +232,8 @@
               
               <div>
                 
-  <section id="exercises-day-3-ta">
-<span id="refeday3ta"></span><h1>Exercises Day 3 TA<a class="headerlink" href="#exercises-day-3-ta" title="Permalink to this headline">¶</a></h1>
+  <section id="exercises-day-3">
+<span id="refeday3"></span><h1>Exercises Day 3<a class="headerlink" href="#exercises-day-3" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#differential-signals" id="id1">1. Differential Signals</a></p>
@@ -238,18 +287,6 @@ Can we use this shiny new differential amplifier to record neural signals?</p>
 <div class="exercise docutils container">
 <p>2G. How can we preserve the nice differential properties of the amplifier we just built, but still have our signals go straight into like a ‘+’ terminal on an op-amp to avoid impedance imbalances, and to avoid drawing current through voltage dividers? Build that circuit.</p>
 </div>
-<div class="tanote admonition">
-<p class="admonition-title">TA Note</p>
-<p>2A: <a class="reference external" href="https://tinyurl.com/yemp5rve">https://tinyurl.com/yemp5rve</a></p>
-<p>2B: It doesn’t work if they only put a wire connection as feedback. They need at least 1 resistor for the simulator to not give an error, because otherwise, they are asking the output of the amplifier, the - input and the reference input to all be at the same voltage when they are not, and the simulator can’t solve the circuit.</p>
-<p>2C: <a class="reference external" href="https://tinyurl.com/yzz5ht4f">https://tinyurl.com/yzz5ht4f</a></p>
-<p>2D: <a class="reference external" href="https://tinyurl.com/yg63xmm5">https://tinyurl.com/yg63xmm5</a>  put ‘+’ in middle of voltage divider to ground. yay this is a diff amplifier!</p>
-<p>Differential amplifier: <a class="reference external" href="https://tinyurl.com/ygmn8kf2">https://tinyurl.com/ygmn8kf2</a></p>
-<p>2E - F: this diff amp relies on a careful balance of impedances that isn’t realistically achievable.</p>
-<p>2G: Solution: use 3 op-amps. 2 act as buffers for the reference and measurement electrode, the third amplifies the difference between them. Then the differences in input impedances don’t matter!
-<a class="reference external" href="https://tinyurl.com/yz8d8e67">https://tinyurl.com/yz8d8e67</a></p>
-<a class="reference external image-reference" href="https://tinyurl.com/yz8d8e67"><img alt="../_images/eea_fig-53.png" class="align-center" src="../_images/eea_fig-53.png" /></a>
-</div>
 </section>
 </section>
 <section id="emg-circuit">
@@ -260,7 +297,7 @@ Can we use this shiny new differential amplifier to record neural signals?</p>
 <li><p>The electrodes clip onto the cable with three wires. We’ll be using an audio-to-breadboard jack to get the signal from the electrodes into the breadboard.</p></li>
 <li><p>An instrumentation amplifier as our ‘headstage’. <a class="reference external" href="https://www.ti.com/lit/ds/symlink/ina129-ep.pdf?ts=1636717545454&amp;ref_url=https%253A%252F%252Fwww.google.com%252F">This</a> is the datasheet for the instrumentation amplifier in your kit.</p></li>
 </ul>
-<img alt="../_images/eea_fig-61.png" class="align-center" src="../_images/eea_fig-61.png" />
+<img alt="../_images/eea_fig-49.png" class="align-center" src="../_images/eea_fig-49.png" />
 <ul class="simple">
 <li><p>We will first test the circuit using the Picoscope to read out the signal. Tomorrow, we will use the Teensy as our acquisition board to digitize the data.</p></li>
 </ul>
@@ -297,23 +334,6 @@ Can we use this shiny new differential amplifier to record neural signals?</p>
 <img alt="../_images/eea_fig-78.png" class="align-center" src="../_images/eea_fig-78.png" />
 <p>3E.   The resistor across the instrumentation amplifier sets the gain of the amplifier. Change the gain of the amplifier by changing Rg. What happens when the value for Rg is very low?</p>
 </div>
-<div class="tanote admonition">
-<p class="admonition-title">TA Note</p>
-<blockquote>
-<div><p>Problems here are often:</p>
-<ul class="simple">
-<li><p>Forgetting to connect both grounds</p></li>
-<li><p>Being offset by 1 position in breadboard. Get the group to help each other spotting small errors like that.</p></li>
-</ul>
-<blockquote>
-<div><p>If they have a lot of noise on their recording, try:</p>
-<ul class="simple">
-<li><p>Disconnecting from 60/50Hz contaminated ground by using laptop battery</p></li>
-<li><p>Twisting or braiding the cables</p></li>
-</ul>
-</div></blockquote>
-</div></blockquote>
-</div>
 </section>
 </section>
 
@@ -322,7 +342,21 @@ Can we use this shiny new differential amplifier to record neural signals?</p>
               
               
               <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="exday2.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Exercises Day 2</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="disclaimer_terms_conditions.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Terms and Conditions</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
               
           </main>

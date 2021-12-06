@@ -1,7 +1,7 @@
-.. _refEDay2TA:
+.. _refEDay2:
 
 ***********************************
-Exercises Day 2 TA
+Exercises Day 2
 ***********************************
 
 .. |Ve| replace:: V\ :sub:`e`\
@@ -36,18 +36,6 @@ Here is that circuit, with shunt impedance added of 100 pF:
 
   1D. The tips of certain electrodes, e.g. nichrome tetrodes, can be electroplated in a thin layer of gold. This 'goldplating' increases the surface area of the tip, creating more space to separate charge. This increases tip capacitance by around 100x. Make this change in the circuit. How similar are Vec and Vin now?
 
-
-.. admonition:: TA Note
-   :class: tanote
-
-   1B: Should be 655 mV left of our 5V signal.
-
-   1C: The capacitor of our electrode and the shunt impedance are forming a voltage divider. Changing the impedance ratio changes the Vin.
-
-   1D: Gold plated electrode circuit: increases capacitance, decreases impedance.  https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWEAmA7NVbnIBwBYFkBmMIogThxFSqTyJAQFMBaMMAKAHcQ2A2SFF7tkQyN2FhRgtlJB4q4gMaTRC3kTWLw0Zi3K8YkVKjyoE5cqlLJ2lvFFiROPFpvlU30qBK9D3guIASrzIkNosyAh8YuDg8IyxMAi+IkKyoizq4gBOqrzqflnaYPBl4q7uxRre4gAevDiovCa8CM0spvIoDkFMHA36DuQQLHzDDg7IDgDC-YN44W0GbHgOLNHd0yAAonUALjkAhkpMADZnAK5nRzkAOgDODwCWAOYAdkdnjwAUAGpMJQASg4eUiSxkYAEsVKoJAAXAckC8Xqwis8lGUKoay2vQeA0YECIVBw2IgU16AFsOK9EaIwOR6XIwtplHShGkGd4wKxSsJoFDohYBIsiJByHwAk54C52YIwKgYoECVCGJEYgyOsRcSA-s93gS2MZhIsNOtSM0HHIdmdAYcAPYAEyYjwAKs8AA4ALg4ACMCmZhJA1VJ5bgfP7ZJjIJkyOBkAZxJGwkGiQgIDYfIMiF02LZhPhJNiersDsdThdrrdHgAxK7PR0qsDm-PYTLsYvbG12nJOl34wZSEPbSLCfNW0QAEXtl19tseABkjgBPJj3B4ASXe+zXADMTv17YlxhzsJREkY4BBBKIkEQOEewFQT2GE9joHxSSImuQ8MRzEq0oZig4BUPeQA
-   Students can get impedance and capacitance mixed up and forget they go in opposite directions.
-
-
 Drawing Current
 ***********************************
 Let's do a recording! We'll take our electrode, and attach it through a long wire to a recording system (the recording system has an analog to digital converter, ADC, and a recording computer). The leakage resistance here is because the recording system is also connected to ground.
@@ -63,13 +51,6 @@ Let's do a recording! We'll take our electrode, and attach it through a long wir
   1F. Place an ideal operational amplifier between the electrode and the long wire. What happens to Vout? Why?
 
   1G. Change the circuit to stop the amplifier from saturating. What is the amplifier gain now?
-
-.. admonition:: TA Note
-   :class: tanote
-
-    1F: We need to do something to prevent our amplifier from always hitting power-rail values. We can provide negative feedback to the amplifier by looping the output back and feeding it into one of the terminals. The amplifier is going to do the same thing as before; output the difference between + and - multiplied by its huge gain. The output will rise rapidly, however this time, as soon as it reaches the value of the + terminal, the + and – are the same value and there’s no difference left to amplify.
-
-    1G: https://tinyurl.com/y454jqlb Connect the amplifier output to the inverting input. Now we’re just seeing our input signal replicated at the output of the amplifier with a gain of 1.
 
 2. Operational Amplifiers
 ###################################
@@ -174,7 +155,7 @@ Replace the 'long wire' with 'headstage'
 ***********************************************
 We will replace our long wire with a 'headstage'. We will use only the most basic part of the headstage, an operational amplifier.
 
-This is the op-amp you have.  Make sure you’re looking at the op-amp (AS358P), not the instrumentation amp. 
+This is the op-amp you have.  Make sure you’re looking at the op-amp (AS358P), not the instrumentation amp.
 
 .. image:: ../_static/images/EEA/eea_fig-41.png
   :align: center
@@ -220,19 +201,3 @@ This is the op-amp you have.  Make sure you’re looking at the op-amp (AS358P),
        -
 
    2H. Optional: try changing the resistances you've used for electrode, shunt, and leakage. What happens to the signal?
-
-
-.. admonition:: TA Note
-  :class: tanote
-
-  The wire now cannot destroy our signal, because even though we did not amplify it at all (we only have unity gain) we ‘buffered’ it. Now the op-amp can push as much current into the wire as is needed and your signal makes it through.
-
-  Optional exercise: Make a version of this circuit that's more similar to ephys signals by using a sinewave.
-
-  - Send sinewave (code in day 1) to pin A14 (no header soldered there but can use a wire, connection is a bit unstable)
-
-  - make it faster (at least 20 Hz, it's still slower than ephys but they get the idea)
-
-  - Use capacitors instead of Resistors, e.g. 104 for electrode, 22 for shunt
-
-  - Connect Agnd to ground

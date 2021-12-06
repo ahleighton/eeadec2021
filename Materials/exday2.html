@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Exercises Day 2 TA &#8212; Open Ephys EEA 2021 0.0.0 documentation</title>
+    <title>Exercises Day 2 &#8212; Open Ephys EEA 2021 0.0.0 documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -33,6 +33,8 @@
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Exercises Day 3" href="exday3.html" />
+    <link rel="prev" title="Exercises Day 1" href="exday1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -73,7 +75,7 @@
  </a>
 </li>
 
-<li class="toctree-l1 nav-item">
+<li class="toctree-l1 current active nav-item">
  <a class="reference internal nav-link" href="eeadocsindex.html">
   Course Materials
  </a>
@@ -126,7 +128,54 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-    
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="safety.html">
+   Safety &amp; Good Practices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="software_requirements.html">
+   Software Requirements
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="theoryday1.html">
+   Theory Day 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="theoryday2.html">
+   Theory Day 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="theoryday3.html">
+   Theory Day 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="theoryday4.html">
+   Theory Day 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exday1.html">
+   Exercises Day 1
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Exercises Day 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exday3.html">
+   Exercises Day 3
+  </a>
+ </li>
+</ul>
+
   </div>
 </nav>
             </div>
@@ -205,8 +254,8 @@
               
               <div>
                 
-  <section id="exercises-day-2-ta">
-<span id="refeday2ta"></span><h1>Exercises Day 2 TA<a class="headerlink" href="#exercises-day-2-ta" title="Permalink to this headline">¶</a></h1>
+  <section id="exercises-day-2">
+<span id="refeday2"></span><h1>Exercises Day 2<a class="headerlink" href="#exercises-day-2" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#impedance-ratios" id="id1">1. Impedance Ratios</a></p>
@@ -235,13 +284,6 @@ Here is that circuit, with shunt impedance added of 100 pF:</p>
 <p>1C. What could we change to increase the signal at Vin?</p>
 <p>1D. The tips of certain electrodes, e.g. nichrome tetrodes, can be electroplated in a thin layer of gold. This ‘goldplating’ increases the surface area of the tip, creating more space to separate charge. This increases tip capacitance by around 100x. Make this change in the circuit. How similar are Vec and Vin now?</p>
 </div>
-<div class="tanote admonition">
-<p class="admonition-title">TA Note</p>
-<p>1B: Should be 655 mV left of our 5V signal.</p>
-<p>1C: The capacitor of our electrode and the shunt impedance are forming a voltage divider. Changing the impedance ratio changes the Vin.</p>
-<p>1D: Gold plated electrode circuit: increases capacitance, decreases impedance.  <a class="reference external" href="https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWEAmA7NVbnIBwBYFkBmMIogThxFSqTyJAQFMBaMMAKAHcQ2A2SFF7tkQyN2FhRgtlJB4q4gMaTRC3kTWLw0Zi3K8YkVKjyoE5cqlLJ2lvFFiROPFpvlU30qBK9D3guIASrzIkNosyAh8YuDg8IyxMAi+IkKyoizq4gBOqrzqflnaYPBl4q7uxRre4gAevDiovCa8CM0spvIoDkFMHA36DuQQLHzDDg7IDgDC-YN44W0GbHgOLNHd0yAAonUALjkAhkpMADZnAK5nRzkAOgDODwCWAOYAdkdnjwAUAGpMJQASg4eUiSxkYAEsVKoJAAXAckC8Xqwis8lGUKoay2vQeA0YECIVBw2IgU16AFsOK9EaIwOR6XIwtplHShGkGd4wKxSsJoFDohYBIsiJByHwAk54C52YIwKgYoECVCGJEYgyOsRcSA-s93gS2MZhIsNOtSM0HHIdmdAYcAPYAEyYjwAKs8AA4ALg4ACMCmZhJA1VJ5bgfP7ZJjIJkyOBkAZxJGwkGiQgIDYfIMiF02LZhPhJNiersDsdThdrrdHgAxK7PR0qsDm-PYTLsYvbG12nJOl34wZSEPbSLCfNW0QAEXtl19tseABkjgBPJj3B4ASXe+zXADMTv17YlxhzsJREkY4BBBKIkEQOEewFQT2GE9joHxSSImuQ8MRzEq0oZig4BUPeQA">https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWEAmA7NVbnIBwBYFkBmMIogThxFSqTyJAQFMBaMMAKAHcQ2A2SFF7tkQyN2FhRgtlJB4q4gMaTRC3kTWLw0Zi3K8YkVKjyoE5cqlLJ2lvFFiROPFpvlU30qBK9D3guIASrzIkNosyAh8YuDg8IyxMAi+IkKyoizq4gBOqrzqflnaYPBl4q7uxRre4gAevDiovCa8CM0spvIoDkFMHA36DuQQLHzDDg7IDgDC-YN44W0GbHgOLNHd0yAAonUALjkAhkpMADZnAK5nRzkAOgDODwCWAOYAdkdnjwAUAGpMJQASg4eUiSxkYAEsVKoJAAXAckC8Xqwis8lGUKoay2vQeA0YECIVBw2IgU16AFsOK9EaIwOR6XIwtplHShGkGd4wKxSsJoFDohYBIsiJByHwAk54C52YIwKgYoECVCGJEYgyOsRcSA-s93gS2MZhIsNOtSM0HHIdmdAYcAPYAEyYjwAKs8AA4ALg4ACMCmZhJA1VJ5bgfP7ZJjIJkyOBkAZxJGwkGiQgIDYfIMiF02LZhPhJNiersDsdThdrrdHgAxK7PR0qsDm-PYTLsYvbG12nJOl34wZSEPbSLCfNW0QAEXtl19tseABkjgBPJj3B4ASXe+zXADMTv17YlxhzsJREkY4BBBKIkEQOEewFQT2GE9joHxSSImuQ8MRzEq0oZig4BUPeQA</a>
-Students can get impedance and capacitance mixed up and forget they go in opposite directions.</p>
-</div>
 <section id="drawing-current">
 <h3><a class="toc-backref" href="#id2">Drawing Current</a><a class="headerlink" href="#drawing-current" title="Permalink to this headline">¶</a></h3>
 <p>Let’s do a recording! We’ll take our electrode, and attach it through a long wire to a recording system (the recording system has an analog to digital converter, ADC, and a recording computer). The leakage resistance here is because the recording system is also connected to ground.</p>
@@ -250,13 +292,6 @@ Students can get impedance and capacitance mixed up and forget they go in opposi
 <p>1E. How much of the voltage at the electrode, Vec, are we recording at Vout?</p>
 <p>1F. Place an ideal operational amplifier between the electrode and the long wire. What happens to Vout? Why?</p>
 <p>1G. Change the circuit to stop the amplifier from saturating. What is the amplifier gain now?</p>
-</div>
-<div class="tanote admonition">
-<p class="admonition-title">TA Note</p>
-<blockquote>
-<div><p>1F: We need to do something to prevent our amplifier from always hitting power-rail values. We can provide negative feedback to the amplifier by looping the output back and feeding it into one of the terminals. The amplifier is going to do the same thing as before; output the difference between + and - multiplied by its huge gain. The output will rise rapidly, however this time, as soon as it reaches the value of the + terminal, the + and – are the same value and there’s no difference left to amplify.</p>
-<p>1G: <a class="reference external" href="https://tinyurl.com/y454jqlb">https://tinyurl.com/y454jqlb</a> Connect the amplifier output to the inverting input. Now we’re just seeing our input signal replicated at the output of the amplifier with a gain of 1.</p>
-</div></blockquote>
 </div>
 </section>
 </section>
@@ -369,17 +404,6 @@ So, we give the rails the ability to very quickly provide a small amount of curr
 <img alt="../_images/eea_fig-40.png" class="align-center" src="../_images/eea_fig-40.png" />
 <p>2G. Now measure the same three points as before and complete this table:</p>
 </div>
-<div class="tanote admonition">
-<p class="admonition-title">TA Note</p>
-<p>The wire now cannot destroy our signal, because even though we did not amplify it at all (we only have unity gain) we ‘buffered’ it. Now the op-amp can push as much current into the wire as is needed and your signal makes it through.</p>
-<p>Optional exercise: Make a version of this circuit that’s more similar to ephys signals by using a sinewave.</p>
-<ul class="simple">
-<li><p>Send sinewave (code in day 1) to pin A14 (no header soldered there but can use a wire, connection is a bit unstable)</p></li>
-<li><p>make it faster (at least 20 Hz, it’s still slower than ephys but they get the idea)</p></li>
-<li><p>Use capacitors instead of Resistors, e.g. 104 for electrode, 22 for shunt</p></li>
-<li><p>Connect Agnd to ground</p></li>
-</ul>
-</div>
 </section>
 </section>
 </section>
@@ -389,7 +413,21 @@ So, we give the rails the ability to very quickly provide a small amount of curr
               
               
               <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="exday1.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Exercises Day 1</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="exday3.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercises Day 3</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
               
           </main>

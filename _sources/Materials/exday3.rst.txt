@@ -1,7 +1,7 @@
-.. _refEDay3TA:
+.. _refEDay3:
 
 ***********************************
-Exercises Day 3 TA
+Exercises Day 3
 ***********************************
 
 .. contents::
@@ -74,28 +74,6 @@ To get this differential amplifier to work, each electrode and resistor would ha
 
   2G. How can we preserve the nice differential properties of the amplifier we just built, but still have our signals go straight into like a ‘+’ terminal on an op-amp to avoid impedance imbalances, and to avoid drawing current through voltage dividers? Build that circuit.
 
-.. admonition:: TA Note
-   :class: tanote
-
-   2A: https://tinyurl.com/yemp5rve
-
-   2B: It doesn't work if they only put a wire connection as feedback. They need at least 1 resistor for the simulator to not give an error, because otherwise, they are asking the output of the amplifier, the - input and the reference input to all be at the same voltage when they are not, and the simulator can't solve the circuit.
-
-   2C: https://tinyurl.com/yzz5ht4f
-
-   2D: https://tinyurl.com/yg63xmm5  put '+' in middle of voltage divider to ground. yay this is a diff amplifier!
-
-   Differential amplifier: https://tinyurl.com/ygmn8kf2
-
-   2E - F: this diff amp relies on a careful balance of impedances that isn't realistically achievable.
-
-   2G: Solution: use 3 op-amps. 2 act as buffers for the reference and measurement electrode, the third amplifies the difference between them. Then the differences in input impedances don't matter!
-   https://tinyurl.com/yz8d8e67
-
-   .. image:: ../_static/images/EEA/eea_fig-53.png
-     :align: center
-     :target: https://tinyurl.com/yz8d8e67
-
 2. EMG circuit
 ###################################
 We now have all the steps of the acquisition in place to simulate a lab experiment. We are going to build an EMG circuit on the breadboard, using:
@@ -104,7 +82,7 @@ We now have all the steps of the acquisition in place to simulate a lab experime
 - The electrodes clip onto the cable with three wires. We’ll be using an audio-to-breadboard jack to get the signal from the electrodes into the breadboard.
 - An instrumentation amplifier as our 'headstage'. `This <https://www.ti.com/lit/ds/symlink/ina129-ep.pdf?ts=1636717545454&ref_url=https%253A%252F%252Fwww.google.com%252F>`_ is the datasheet for the instrumentation amplifier in your kit.
 
-.. image:: ../_static/images/EEA/eea_fig-61.png
+.. image:: ../_static/images/EEA/eea_fig-49.png
   :align: center
 
 - We will first test the circuit using the Picoscope to read out the signal. Tomorrow, we will use the Teensy as our acquisition board to digitize the data.
@@ -153,17 +131,3 @@ Make sure your Picoscope responds to tapping your electrodes before continuing! 
     :align: center
 
   3E.	The resistor across the instrumentation amplifier sets the gain of the amplifier. Change the gain of the amplifier by changing Rg. What happens when the value for Rg is very low?
-
-
-.. admonition:: TA Note
-   :class: tanote
-
-     Problems here are often:
-
-     * Forgetting to connect both grounds
-     * Being offset by 1 position in breadboard. Get the group to help each other spotting small errors like that.
-
-      If they have a lot of noise on their recording, try:
-
-      •	Disconnecting from 60/50Hz contaminated ground by using laptop battery
-      •	Twisting or braiding the cables
