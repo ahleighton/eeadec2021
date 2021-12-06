@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Exercises Day 1 TA &#8212; Open Ephys EEA 2021 0.0.0 documentation</title>
+    <title>Exercises Day 1 &#8212; Open Ephys EEA 2021 0.0.0 documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -34,6 +34,8 @@
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Terms and Conditions" href="disclaimer_terms_conditions.html" />
+    <link rel="prev" title="Theory Day 4" href="theoryday4.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -74,7 +76,7 @@
  </a>
 </li>
 
-<li class="toctree-l1 nav-item">
+<li class="toctree-l1 current active nav-item">
  <a class="reference internal nav-link" href="eeadocsindex.html">
   Course Materials
  </a>
@@ -127,7 +129,44 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-    
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="safety.html">
+   Safety &amp; Good Practices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="software_requirements.html">
+   Software Requirements
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="theoryday1.html">
+   Theory Day 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="theoryday2.html">
+   Theory Day 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="theoryday3.html">
+   Theory Day 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="theoryday4.html">
+   Theory Day 4
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Exercises Day 1
+  </a>
+ </li>
+</ul>
+
   </div>
 </nav>
             </div>
@@ -227,11 +266,6 @@
    10. The equivalent circuit of the electrode
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#wrap-up">
-   Wrap Up
-  </a>
- </li>
 </ul>
 
 </nav>
@@ -253,8 +287,8 @@
               
               <div>
                 
-  <section id="exercises-day-1-ta">
-<span id="refeday1ta"></span><h1>Exercises Day 1 TA<a class="headerlink" href="#exercises-day-1-ta" title="Permalink to this headline">¶</a></h1>
+  <section id="exercises-day-1">
+<span id="refeday1"></span><h1>Exercises Day 1<a class="headerlink" href="#exercises-day-1" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
 <ul class="simple">
@@ -282,18 +316,7 @@
 <li><p><a class="reference internal" href="#impedance" id="id13">8. Impedance</a></p></li>
 <li><p><a class="reference internal" href="#capacitive-voltage-divider" id="id14">9. Capacitive voltage divider</a></p></li>
 <li><p><a class="reference internal" href="#the-equivalent-circuit-of-the-electrode" id="id15">10. The equivalent circuit of the electrode</a></p></li>
-<li><p><a class="reference internal" href="#wrap-up" id="id16">Wrap Up</a></p></li>
 </ul>
-</div>
-<div class="tanote admonition">
-<p class="admonition-title">TA Note</p>
-<p>For many students, day 1 is about getting to know the equipment &amp; using the right names for everything. Unless students are already confident, it’s best to take everyone through day 1 as a group:</p>
-<ul class="simple">
-<li><p>Show them the probes for the oscilloscope</p></li>
-<li><p>Check they understand the multimeter and oscilloscope and what they’re measuring</p></li>
-<li><p>Make sure they can scale their picoscope software</p></li>
-</ul>
-<p>Check that everyone has a nice signal each time before moving on and that basics are clear, like which parts of the breadboard are connected.</p>
 </div>
 <section id="using-a-multimeter">
 <h2><a class="toc-backref" href="#id1">1.      Using a multimeter</a><a class="headerlink" href="#using-a-multimeter" title="Permalink to this headline">¶</a></h2>
@@ -301,10 +324,6 @@
 <p>1A. Make sure the multimeter has batteries installed. Put the red lead in the port marked ‘VmAuA’ and the black one in the port marked COM.</p>
 <p>1B. Set the multimeter to ‘Ω’. Use your multimeter to measure the resistance of any 3 different resistors in the kit. Check whether the resistance values you read correspond to the bands on the resistors. How is your multimeter measuring this resistance?</p>
 <p>1C. Now set your multimeter to measure the voltage across a battery. What does it mean if you record a negative voltage?</p>
-</div>
-<div class="tanote admonition">
-<p class="admonition-title">TA Note</p>
-<p>To measure resistance, the multimeter generates a voltage at both probes, and measures the current generated between them.</p>
 </div>
 <section id="solderless-breadboard">
 <h3><a class="toc-backref" href="#id2">Solderless Breadboard</a><a class="headerlink" href="#solderless-breadboard" title="Permalink to this headline">¶</a></h3>
@@ -339,15 +358,6 @@ If you need to, refer back to the <a class="reference external" href="https://le
 </div>
 <img alt="../_images/eea_fig-12.png" class="align-center" src="../_images/eea_fig-12.png" />
 <img alt="../_images/eea_fig-13.png" class="align-center" src="../_images/eea_fig-13.png" />
-<div class="tanote admonition">
-<p class="admonition-title">TA Note</p>
-<p>1E: If they need to upload the programme again, they can open the Arduino software: examples/basics/blink. Any problems, check:</p>
-<ul class="simple">
-<li><p>Whether the board is set to Teensy under Tools/Board</p></li>
-<li><p>The selected port Tools/Port</p></li>
-</ul>
-<p>1F:   Should be around 3.3V.</p>
-</div>
 </section>
 </section>
 <section id="using-an-oscilloscope">
@@ -365,13 +375,6 @@ If you need to, refer back to the <a class="reference external" href="https://le
 <li><p>y-axis scaling (Auto doesn’t always work)</p></li>
 <li><p>whether it is set to DC (direct current) or AC (alternating current).</p></li>
 </ul>
-<div class="tanote admonition">
-<p class="admonition-title">TA Note</p>
-<p>2C: Should see a clear square wave of around 3.3 amplitude.</p>
-<img alt="../_images/eea_fig-66.png" class="align-center" src="../_images/eea_fig-66.png" />
-<p>NB: sometimes connecting the ground directly to the Teensy causes it to charge (you can see it with the scope) and it can end up disconnecting from the PC and making a mess. They don’t actually need the ground of the scope connected to see the large sine wave because of the scope’s high input impedance. That might be confusing now, but should be clearer after talking about impedance tomorrow.</p>
-<p>!!! If a student’s scope isn’t responding to any input, before panicking check that they are not using the ‘automotive’ version of the Picoscope software as this will make the scope look dead.</p>
-</div>
 <p>We’ll now use the Teensy microcontroller to output a sine wave, instead of the blink example.</p>
 <div class="exercise docutils container">
 <p>2D. Open the Arduino Software Upload the following code to your teensy:</p>
@@ -381,14 +384,6 @@ If you see ‘Done Uploading’, the Teensy will start giving a sine wave as out
 <p>2E.   Measure the output with your multimeter, from pin A14.</p>
 <p>2F.   Connect your oscilloscope probe to A14 and visualise the signal in your PicoScope software.</p>
 <img alt="../_images/eea_fig-15.png" class="align-center" src="../_images/eea_fig-15.png" />
-</div>
-<div class="tanote admonition">
-<p class="admonition-title">TA Note</p>
-<blockquote>
-<div><p>2D: If they get an error ‘redefinition of void setup’ it’s because they dragged the sketch to the software,  then it gets added to the other sketch, needs to be uploaded separately.</p>
-<p>2E: They should see a constant voltage of around 3.3 volts from A14 to GND, because their multimeter doesn’t resolve the signal fast enough to see the waveform. Pin A14 is a DAC, digital to analog converter, so it can take the digital representation and output an analog(ish) sinewave.</p>
-<p>These exercises are just to check that they understand the value of having the oscilloscope over the multimeter- that knowing the shape of the signal is important. It helps to keep linking this back to their neural signals- what if you were undersampling them, you wouldn’t see spikes. Make sure they are ok with the idea of alternating signals, and that digital and analog signals are clear as well.</p>
-</div></blockquote>
 </div>
 </section>
 <section id="ohms-law">
@@ -410,12 +405,6 @@ Right-click on the top wire in the circuit, and then select Edit to display the 
 <p>4A.   Display the voltage and current over both resistors in the ‘scope’ (right click/show in new scope). What will happen to the voltage over the left resistor if you double its resistance? What will happen to the current?</p>
 <p>4B.   What will happen to the voltage and current over the right-hand resistor? Double the value in the simulator and see if your predictions were correct.</p>
 </div>
-<div class="tanote admonition">
-<p class="admonition-title">TA Note</p>
-<blockquote>
-<div><p>Students can get confused about using Ohm’s law over a whole closed circuit (to get current) and over individual components (voltage drops). It helps to remind them at which points in the circuit current must be equal and where voltage must be highest and lowest. Check that they understand why the current across these two resistors can be different, but not in the closed circuit above.</p>
-</div></blockquote>
-</div>
 </section>
 <section id="voltage-divider">
 <h2><a class="toc-backref" href="#id7">5.      Voltage Divider</a><a class="headerlink" href="#voltage-divider" title="Permalink to this headline">¶</a></h2>
@@ -429,12 +418,6 @@ Right-click on the top wire in the circuit, and then select Edit to display the 
 <div class="math notranslate nohighlight">
 \[|Vout| = |Vin| \frac{R2}{R1+R2}\]</div>
 <p>5A.     Using the simulator (here’s an empty full-screen <a class="reference external" href="https://tinyurl.com/y477e9qd">https://tinyurl.com/y477e9qd</a>) build a voltage divider circuit in which you use a 3V battery and two resistors to provide an 800 mV output voltage V<sub>out</sub>.</p>
-<div class="tanote admonition">
-<p class="admonition-title">TA Note</p>
-<p>Voltage divider circuits:
-<a class="reference external" href="https://tinyurl.com/yyh5amrz">https://tinyurl.com/yyh5amrz</a>
-<a class="reference external" href="https://tinyurl.com/y5odbxa5">https://tinyurl.com/y5odbxa5</a></p>
-</div>
 </section>
 <section id="on-breadboard">
 <h3><a class="toc-backref" href="#id9">On breadboard</a><a class="headerlink" href="#on-breadboard" title="Permalink to this headline">¶</a></h3>
@@ -455,10 +438,6 @@ Right-click on the top wire in the circuit, and then select Edit to display the 
 </div>
 <section id="capacitors-direct-current">
 <h3><a class="toc-backref" href="#id11">Capacitors, direct current</a><a class="headerlink" href="#capacitors-direct-current" title="Permalink to this headline">¶</a></h3>
-<div class="tanote admonition">
-<p class="admonition-title">TA Note</p>
-<p>Skip this exercise if running out of time</p>
-</div>
 <p>Capacitors are made of two conducting plates, separated by an insulating material that prevents the plates from touching. Charges cannot jump through the insulating layer. Instead, charges collect on one plate, forming an electric field that pushes away similar charges on the opposite plate. This movement of charge is what gives us current flow in the circuit, even though charges cannot flow directly through the capacitor.</p>
 <div class="math notranslate nohighlight">
 \[Q = C * V\]</div>
@@ -474,14 +453,6 @@ In this simulation, you can charge and discharge a capacitor and see the current
 <p>6C.   In this configuration, you will need to move the + leg of the cap (where the oscilloscope probe is) between GND and +3V. In the schematic, the + leg is connected to +3V, in the photo it is connected to GND.
 You should see it charge and discharge in your PicoScope trace. How long does it take for the capacitor to charge?</p>
 <p>6D.   Change the value of the resistor. What does this change in your trace? Can you explain why?</p>
-</div>
-<div class="tanote admonition">
-<p class="admonition-title">TA Note</p>
-<blockquote>
-<div><p>6A: <a class="reference external" href="https://tinyurl.com/y5p5y5p2">https://tinyurl.com/y5p5y5p2</a></p>
-<p>6D: Results should look like figure below. Top panel: 220 kOhm, lower panel:very low resistance. Why? Because the resistor is setting the current through the circuit, determining how fast the capacitor is allowed to charge.</p>
-<img alt="../_images/eea_fig-67.png" class="align-center" src="../_images/eea_fig-67.png" />
-</div></blockquote>
 </div>
 </section>
 </section>
@@ -509,12 +480,6 @@ Here is a demo where an alternating signal increases and decreases in frequency.
 <p>8A. Visualise the current in the circuit (for instance the current flowing through the stretch of wire). You could add a new scope to do this or double-click the wire and ‘show current’. Which circuit has higher current?</p>
 <p>8B. Add a third circuit, powered by an alternating voltage source of 120 Hz. What happens to the current as the frequency increases?</p>
 <p>(Bonus question: what happens to the voltage drop across the capacitor as frequency increases?)</p>
-</div>
-<div class="tanote admonition">
-<p class="admonition-title">TA Note</p>
-<p>With increasing frequency, the impedance of the capacitor decreases. That means that:
-- The overall current in the circuit increases (I = V/R with lower R)
-- The ratio of impedance between the 200 Ohm resistor and the capacitor changes. It’s another voltage divider: the 5 volt must still be ‘spent’ in the circuit, but more of it now goes to the 200 Ohm resistor. The voltage drop over the capacitor reduces as its impedance reduces.</p>
 </div>
 <p>The impedance magnitude of a capacitor, also called reactance (X<sub>c</sub>), depends on:</p>
 <div class="math notranslate nohighlight">
@@ -556,24 +521,6 @@ You may have to change the simulation speed using the red slider at the top righ
 <p>10B.        Edit the alternating voltage supply to provide 1V at 1Khz, mimicking the signal coming from your cell. 1V is larger than ephys signals, but makes the current flow easier to see. Change the sliders for simulation speed and current speed until you can see where the current is flowing.</p>
 <p>10C. What happens if you delete R<sub>e</sub>?</p>
 <p>10D. Can you change this circuit from a polarising, tungsten electrode, to a circuit representing a nonpolarizable electrode?</p>
-<div class="tanote admonition">
-<p class="admonition-title">TA Note</p>
-<p>10C: Should see little difference if electrode is only represented by capacitor</p>
-<a class="reference external image-reference" href="https://tinyurl.com/yzzjjvdk"><img alt="../_images/eea_fig-80.png" class="align-center" src="../_images/eea_fig-80.png" /></a>
-<p>Circuit of electrode: <a class="reference external" href="https://tinyurl.com/yzzjjvdk">https://tinyurl.com/yzzjjvdk</a></p>
-</div>
-</div>
-</section>
-<section id="wrap-up">
-<h2><a class="toc-backref" href="#id16">Wrap Up</a><a class="headerlink" href="#wrap-up" title="Permalink to this headline">¶</a></h2>
-<div class="tanote admonition">
-<p class="admonition-title">TA Note</p>
-<p>If they don’t make it through all the exercises that’s ok, but concepts that they should understand are:</p>
-<ul class="simple">
-<li><p>What is an oscilloscope measuring?</p></li>
-<li><p>How does a voltage divider work?  (this keeps coming back during the course)</p></li>
-<li><p>What is the important difference between capacitors and resistors? (Frequency-dependent impedance changes of capacitors, also keeps coming back)</p></li>
-</ul>
 </div>
 </section>
 </section>
@@ -583,7 +530,21 @@ You may have to change the simulation speed using the red slider at the top righ
               
               
               <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="theoryday4.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Theory Day 4</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="disclaimer_terms_conditions.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Terms and Conditions</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
               
           </main>
