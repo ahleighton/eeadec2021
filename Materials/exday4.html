@@ -460,14 +460,10 @@
 <div class="exercise docutils container">
 <ol class="upperalpha simple">
 <li><p>Connect the output from your amplifier to an analog input node on the Teensy as shown below. This is a 220 Ohm resistor across the instrumentation amplifier, and a voltage divider made of two equal resistors (anything above 1KOhm, see the text on ‘shifting the bipolar signal up’ below).</p></li>
-<li><p>Upload ‘Firmata.ino’ to the Teensy (code here: <a class="reference internal" href="Firmata.html#firmata"><span class="std std-ref">Firmata</span></a> )</p></li>
+<li><p>Upload Firmata to the Teensy (code is in Arduino: Examples/Firmata/StandardFirmata )</p></li>
 <li><p>Open Bonsai and create an Analog Input node. Double-click to visualise your signal.</p></li>
 <li><p>Connect this to a ‘Csv Writer’ node to save your signals.</p></li>
 </ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>It should work with just ‘AnalogInput’. It’s nicer to use the ‘CreateArduino’ node and specify the Teensy, this also allows you to set the sampling interval, so you can increase it if the computer is struggling.</p>
-</div>
 </div>
 </section>
 </section>
