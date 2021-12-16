@@ -166,22 +166,19 @@
 <p>// Copy this text to a new sketch in the Arduino software (clear the default ‘void loop etc first) and save as Sinewave.ino</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Simple</span> <span class="n">DAC</span> <span class="n">sine</span> <span class="n">wave</span> <span class="n">test</span><span class="p">,</span> <span class="mi">7</span><span class="n">Hz</span>
 
-<span class="nb">float</span> <span class="n">phase</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
-<span class="nb">float</span> <span class="n">twopi</span> <span class="o">=</span> <span class="mf">3.14159</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
-<span class="n">elapsedMicros</span> <span class="n">usec</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="nb">float</span> <span class="n">pin</span> <span class="o">=</span> <span class="n">A14</span><span class="p">;</span>
+<span class="nb">float</span> <span class="n">freq</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> <span class="o">//</span> <span class="p">[</span><span class="n">Hz</span><span class="p">]</span>
+<span class="nb">float</span> <span class="n">adc_depth</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
 
 <span class="n">void</span> <span class="n">setup</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">analogWriteResolution</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span>
+  <span class="n">analogWriteResolution</span><span class="p">(</span><span class="n">adc_depth</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="n">void</span> <span class="n">loop</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nb">float</span> <span class="n">val</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">phase</span><span class="p">)</span> <span class="o">*</span> <span class="mf">2000.0</span> <span class="o">+</span> <span class="mf">2050.0</span><span class="p">;</span>
-  <span class="n">analogWrite</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="n">val</span><span class="p">);</span>
-  <span class="n">phase</span> <span class="o">=</span> <span class="n">phase</span> <span class="o">+</span> <span class="mf">0.02</span><span class="p">;</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">phase</span> <span class="o">&gt;=</span> <span class="n">twopi</span><span class="p">)</span> <span class="n">phase</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="k">while</span> <span class="p">(</span><span class="n">usec</span> <span class="o">&lt;</span> <span class="mi">500</span><span class="p">)</span> <span class="p">;</span> <span class="o">//</span> <span class="n">wait</span>
-  <span class="n">usec</span> <span class="o">=</span> <span class="n">usec</span> <span class="o">-</span> <span class="mi">500</span><span class="p">;</span>
+  <span class="nb">float</span> <span class="n">curr_time</span> <span class="o">=</span> <span class="n">millis</span><span class="p">()</span> <span class="o">/</span> <span class="mf">1000.0</span><span class="p">;</span> <span class="o">//</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span>
+  <span class="nb">float</span> <span class="n">sinusoid</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">PI</span> <span class="o">*</span> <span class="n">freq</span> <span class="o">*</span> <span class="n">curr_time</span><span class="p">);</span>
+  <span class="nb">int</span> <span class="n">val</span> <span class="o">=</span> <span class="p">(</span><span class="n">sinusoid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">adc_depth</span><span class="p">);</span>
+  <span class="n">analogWrite</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span> <span class="n">val</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>

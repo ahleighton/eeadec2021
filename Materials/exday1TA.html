@@ -223,11 +223,6 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-equivalent-circuit-of-the-electrode">
-   10. The equivalent circuit of the electrode
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#wrap-up">
    Wrap Up
   </a>
@@ -281,8 +276,7 @@
 <li><p><a class="reference internal" href="#alternating-signal-ac" id="id12">7. Alternating signal (AC)</a></p></li>
 <li><p><a class="reference internal" href="#impedance" id="id13">8. Impedance</a></p></li>
 <li><p><a class="reference internal" href="#capacitive-voltage-divider" id="id14">9. Capacitive voltage divider</a></p></li>
-<li><p><a class="reference internal" href="#the-equivalent-circuit-of-the-electrode" id="id15">10. The equivalent circuit of the electrode</a></p></li>
-<li><p><a class="reference internal" href="#wrap-up" id="id16">Wrap Up</a></p></li>
+<li><p><a class="reference internal" href="#wrap-up" id="id15">Wrap Up</a></p></li>
 </ul>
 </div>
 <div class="tanote admonition">
@@ -304,6 +298,7 @@
 </div>
 <div class="tanote admonition">
 <p class="admonition-title">TA Note</p>
+<p>1C: 1.62 V. If you record a negative voltage you just have to switch the lead around, it’s convention: the positive side of the battery should be the red.</p>
 <p>To measure resistance, the multimeter generates a voltage at both probes, and measures the current generated between them.</p>
 </div>
 <section id="solderless-breadboard">
@@ -346,7 +341,7 @@ If you need to, refer back to the <a class="reference external" href="https://le
 <li><p>Whether the board is set to Teensy under Tools/Board</p></li>
 <li><p>The selected port Tools/Port</p></li>
 </ul>
-<p>1F:   Should be around 3.3V.</p>
+<p>1F:   Should be around 3.3V when it is on.</p>
 </div>
 </section>
 </section>
@@ -386,7 +381,7 @@ If you see ‘Done Uploading’, the Teensy will start giving a sine wave as out
 <p class="admonition-title">TA Note</p>
 <blockquote>
 <div><p>2D: If they get an error ‘redefinition of void setup’ it’s because they dragged the sketch to the software,  then it gets added to the other sketch, needs to be uploaded separately.</p>
-<p>2E: They should see a constant voltage of around 3.3 volts from A14 to GND, because their multimeter doesn’t resolve the signal fast enough to see the waveform. Pin A14 is a DAC, digital to analog converter, so it can take the digital representation and output an analog(ish) sinewave.</p>
+<p>2E: They should see a constant voltage of around 3.3 volts from A14 to GND, because their multimeter doesn’t resolve the signal fast enough to see the waveform. Pin A14 is a DAC, digital to analog converter, so it can take the digital representation and output an analog(ish) sinewave. Make sure they don’t get mixed up with digital pin 14 (analog pin 0).</p>
 <p>These exercises are just to check that they understand the value of having the oscilloscope over the multimeter- that knowing the shape of the signal is important. It helps to keep linking this back to their neural signals- what if you were undersampling them, you wouldn’t see spikes. Make sure they are ok with the idea of alternating signals, and that digital and analog signals are clear as well.</p>
 </div></blockquote>
 </div>
@@ -413,7 +408,12 @@ Right-click on the top wire in the circuit, and then select Edit to display the 
 <div class="tanote admonition">
 <p class="admonition-title">TA Note</p>
 <blockquote>
-<div><p>Students can get confused about using Ohm’s law over a whole closed circuit (to get current) and over individual components (voltage drops). It helps to remind them at which points in the circuit current must be equal and where voltage must be highest and lowest. Check that they understand why the current across these two resistors can be different, but not in the closed circuit above.</p>
+<div><p>Students can get confused about using Ohm’s law over a whole closed circuit (to get current) and over individual components (voltage drops). It helps to remind them at which points in the circuit current must be equal and where voltage must be highest and lowest. Check that they understand why the current across these two resistors can be different, but not in the closed circuit above.
+Decreasing the resistance of any of the two resistors increases the current since they are in series and V = I * (R1+R2). Changes the ratio of the resistors changes the voltage drop over each resistor.</p>
+<p>4A: voltage over both resistors is the same as they are connected in parallel to a 5V source. Current will vary with resistance.</p>
+<p>Circuit analysis refresher
+In series: same current flowing through components. In parallel: same voltage across components. KCL in each node current should add up to zero. KVL in each loop voltage should add up to zero.</p>
+<p>Methods for solving a circuit: Equivalent <a class="reference external" href="https://www.khanacademy.org/science/in-in-class10th-physics/in-in-electricity/in-in-solving-a-circuit-with-series-and-parallel-resistors/v/solved-example-finding-current-voltage-in-a-circuit">https://www.khanacademy.org/science/in-in-class10th-physics/in-in-electricity/in-in-solving-a-circuit-with-series-and-parallel-resistors/v/solved-example-finding-current-voltage-in-a-circuit</a> and more advanced methods <a class="reference external" href="https://www.khanacademy.org/science/electrical-engineering/ee-circuit-analysis-topic/ee-dc-circuit-analysis/a/ee-circuit-analysis-overview">https://www.khanacademy.org/science/electrical-engineering/ee-circuit-analysis-topic/ee-dc-circuit-analysis/a/ee-circuit-analysis-overview</a></p>
 </div></blockquote>
 </div>
 </section>
@@ -428,12 +428,13 @@ Right-click on the top wire in the circuit, and then select Edit to display the 
 <p>That means that, in a circuit with multiple resistors in series, the ratio of their resistances determines how much voltage will drop over each. We can therefore split up (divide) the voltage from a source across resistors. If we measure the voltage in between these resistors as V<sub>out</sub>:</p>
 <div class="math notranslate nohighlight">
 \[|Vout| = |Vin| \frac{R2}{R1+R2}\]</div>
-<p>5A.     Using the simulator (here’s an empty full-screen <a class="reference external" href="https://tinyurl.com/y477e9qd">https://tinyurl.com/y477e9qd</a>) build a voltage divider circuit in which you use a 3V battery and two resistors to provide an 800 mV output voltage V<sub>out</sub>.</p>
+<p>5A.     Using the simulator (here’s an empty full-screen <a class="reference external" href="https://tinyurl.com/y477e9qd">https://tinyurl.com/y477e9qd</a>) build a voltage divider circuit in which you use a 3V battery and two resistors to provide an 272 mV output voltage V<sub>out</sub>.</p>
 <div class="tanote admonition">
 <p class="admonition-title">TA Note</p>
 <p>Voltage divider circuits:
-<a class="reference external" href="https://tinyurl.com/yyh5amrz">https://tinyurl.com/yyh5amrz</a>
-<a class="reference external" href="https://tinyurl.com/y5odbxa5">https://tinyurl.com/y5odbxa5</a></p>
+<a class="reference external" href="https://tinyurl.com/y2n2wg5a">https://tinyurl.com/y2n2wg5a</a></p>
+<p>Sparkfun overview:
+<a class="reference external" href="https://learn.sparkfun.com/tutorials/voltage-dividers/all#extra-credit-proof">https://learn.sparkfun.com/tutorials/voltage-dividers/all#extra-credit-proof</a></p>
 </div>
 </section>
 <section id="on-breadboard">
@@ -529,43 +530,9 @@ Here is a demo where an alternating signal increases and decreases in frequency.
 <a class="reference external image-reference" href="https://tinyurl.com/y5kq7yct"><img alt="../_images/eea_fig-26.png" class="align-center" src="../_images/eea_fig-26.png" /></a>
 <p>9A.   Try changing the capacitance values C for the first capacitor. How does this change your output voltage?</p>
 </div>
-<p>In the circuit below, you will see a capacitor and a resistor in parallel. The voltage source alternates at 20Hz, going from -10 to +10 volts. The current travels over the resistor or via the capacitor to ground.</p>
-<a class="reference external image-reference" href="https://tinyurl.com/yhu578fx"><img alt="../_images/eea_fig-74.png" class="align-center" src="../_images/eea_fig-74.png" /></a>
-<div class="exercise docutils container">
-<p>9B.  Increase the value of the resistor to 200kOhm. What happens to the current?</p>
-<p>9C.  Put the resistor back to 1kOhm. Now, increase the capacitance of the capacitor to around 10mF. What happens to the current?</p>
-<p>9D.  Return the values to 1kOhm and 10uF.</p>
-<p>Change the frequency of the alternating signal to:
-- 1000 Hz (action potentials!)
-- 1 Hz
-You may have to change the simulation speed using the red slider at the top right, and adjust the x-scaling of the scope below (right-click / properties / and slide the ‘horizontal scale’).</p>
-<p>9E. How does the frequency of the signal relate to how much current crosses either the capacitor or the resistor?</p>
-</div>
-</section>
-<section id="the-equivalent-circuit-of-the-electrode">
-<h2><a class="toc-backref" href="#id15">10. The equivalent circuit of the electrode</a><a class="headerlink" href="#the-equivalent-circuit-of-the-electrode" title="Permalink to this headline">¶</a></h2>
-<p>In the theory handout, we discussed how we can represent an electrode as a circuit containing a resistance and a capacitance. We’ll now build this equivalent circuit in the simulator.</p>
-<div class="exercise docutils container">
-<p>10A.        Edit the circuit used above to build the equivalent circuit of a polarised, tungsten electrode.</p>
-<p>Here are some values to use:</p>
-<ul class="simple">
-<li><p>R<sub>m</sub>: the DC resistance of the metal electrode wire, 10-100 Ohms.</p></li>
-<li><p>C<sub>e</sub>: the electrode tip capacitance, generated by the double layer generated around the electrode.  C<sub>e</sub> ~ 0.2 pF / µm2, so 10 - 20 pF (if the electrode is unplated)</p></li>
-<li><p>R<sub>e</sub>: electrode tip resistance, in parallel with C<sub>e</sub>. ~ 100 MOhm.</p></li>
-</ul>
-<p>10B.        Edit the alternating voltage supply to provide 1V at 1Khz, mimicking the signal coming from your cell. 1V is larger than ephys signals, but makes the current flow easier to see. Change the sliders for simulation speed and current speed until you can see where the current is flowing.</p>
-<p>10C. What happens if you delete R<sub>e</sub>?</p>
-<p>10D. Can you change this circuit from a polarising, tungsten electrode, to a circuit representing a nonpolarizable electrode?</p>
-<div class="tanote admonition">
-<p class="admonition-title">TA Note</p>
-<p>10C: Should see little difference if electrode is only represented by capacitor</p>
-<a class="reference external image-reference" href="https://tinyurl.com/yzzjjvdk"><img alt="../_images/eea_fig-80.png" class="align-center" src="../_images/eea_fig-80.png" /></a>
-<p>Circuit of electrode: <a class="reference external" href="https://tinyurl.com/yzzjjvdk">https://tinyurl.com/yzzjjvdk</a></p>
-</div>
-</div>
 </section>
 <section id="wrap-up">
-<h2><a class="toc-backref" href="#id16">Wrap Up</a><a class="headerlink" href="#wrap-up" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id15">Wrap Up</a><a class="headerlink" href="#wrap-up" title="Permalink to this headline">¶</a></h2>
 <div class="tanote admonition">
 <p class="admonition-title">TA Note</p>
 <p>If they don’t make it through all the exercises that’s ok, but concepts that they should understand are:</p>

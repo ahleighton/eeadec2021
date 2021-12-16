@@ -149,17 +149,15 @@
   <a class="reference internal nav-link" href="#differential-signals">
    1. Differential Signals
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reference-electrode">
-     Reference electrode
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reference-electrode">
+   2. Reference electrode
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#emg-circuit">
-   2. EMG circuit
+   3. EMG circuit
   </a>
  </li>
 </ul>
@@ -187,21 +185,19 @@
 <span id="refeday3ta"></span><h1>Exercises Day 3 TA<a class="headerlink" href="#exercises-day-3-ta" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#differential-signals" id="id1">1. Differential Signals</a></p>
-<ul>
-<li><p><a class="reference internal" href="#reference-electrode" id="id2">Reference electrode</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#emg-circuit" id="id3">2. EMG circuit</a></p></li>
+<li><p><a class="reference internal" href="#differential-signals" id="id3">1. Differential Signals</a></p></li>
+<li><p><a class="reference internal" href="#reference-electrode" id="id4">2. Reference electrode</a></p></li>
+<li><p><a class="reference internal" href="#emg-circuit" id="id5">3. EMG circuit</a></p></li>
 </ul>
 </div>
 <section id="differential-signals">
-<h2><a class="toc-backref" href="#id1">1. Differential Signals</a><a class="headerlink" href="#differential-signals" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id3">1. Differential Signals</a><a class="headerlink" href="#differential-signals" title="Permalink to this headline">¶</a></h2>
 <div class="exercise docutils container">
 <p>1A.   Measure across your fingers with the oscilloscope 1x probe. How big is the amplitude of this signal? Compare this to the size of a spike, around 100 µV.  Could you see a spike on top of that noise?</p>
 </div>
+</section>
 <section id="reference-electrode">
-<h3><a class="toc-backref" href="#id2">Reference electrode</a><a class="headerlink" href="#reference-electrode" title="Permalink to this headline">¶</a></h3>
+<h2><a class="toc-backref" href="#id4">2. Reference electrode</a><a class="headerlink" href="#reference-electrode" title="Permalink to this headline">¶</a></h2>
 <p>So far, we have only considered the signal coming into our recording electrode, relative to ground. We will now add a reference electrode in the simulator.</p>
 <p>You can think of the small square waves as spikes you are trying to detect, and the sine wave (that both reference and your measurement electrode share) as the background. This background could be slow EEG signals or 50Hz noise, which is likely to be present at both electrodes.</p>
 <p>Step-by-step, we are going to build our ‘goal’ circuit has the following properties:</p>
@@ -242,6 +238,9 @@ Can we use this shiny new differential amplifier to record neural signals?</p>
 <p class="admonition-title">TA Note</p>
 <p>2A: <a class="reference external" href="https://tinyurl.com/yemp5rve">https://tinyurl.com/yemp5rve</a></p>
 <p>2B: It doesn’t work if they only put a wire connection as feedback. They need at least 1 resistor for the simulator to not give an error, because otherwise, they are asking the output of the amplifier, the - input and the reference input to all be at the same voltage when they are not, and the simulator can’t solve the circuit.</p>
+<p>Why does putting just one resistor cause saturation? In that case, the (-) input would be receiving 60Hz 5V signal and trying to output the 120Hz 10mV difference that it is seeing on the (+) input to try and match both inputs. The amplifier does everything it can to make the - input equal to the + input. It outputs a voltage trying to increase the voltage at - every time there is a spike. But, because the - input is directly connected (via only a wire) to the voltage supply, it <a href="#id1"><span class="problematic" id="id2">*</span></a>must * have the same voltage as the voltage supply. Otherwise we’d have two different voltages in the same wire. The amplifier keeps reading that it has not succeeded to bring the - to the + level so it keeps its connection to the + rail, outputting the max voltage it can, i.e. saturating. All the voltage it outputs is actually lost over the resistor.
+Here’s a simplified circuit with a direct voltage source instead of alternating just to  keep it simple. <a class="reference external" href="https://tinyurl.com/yyrs7o6t">https://tinyurl.com/yyrs7o6t</a>
+If you change the voltage on the variable voltage source on the right hand side, you can see that increasing the provided voltage only causes the voltage drop over the resistor to increase</p>
 <p>2C: <a class="reference external" href="https://tinyurl.com/yzz5ht4f">https://tinyurl.com/yzz5ht4f</a></p>
 <p>2D: <a class="reference external" href="https://tinyurl.com/yg63xmm5">https://tinyurl.com/yg63xmm5</a>  put ‘+’ in middle of voltage divider to ground. yay this is a diff amplifier!</p>
 <p>Differential amplifier: <a class="reference external" href="https://tinyurl.com/ygmn8kf2">https://tinyurl.com/ygmn8kf2</a></p>
@@ -251,9 +250,8 @@ Can we use this shiny new differential amplifier to record neural signals?</p>
 <a class="reference external image-reference" href="https://tinyurl.com/yz8d8e67"><img alt="../_images/eea_fig-53.png" class="align-center" src="../_images/eea_fig-53.png" /></a>
 </div>
 </section>
-</section>
 <section id="emg-circuit">
-<h2><a class="toc-backref" href="#id3">2. EMG circuit</a><a class="headerlink" href="#emg-circuit" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id5">3. EMG circuit</a><a class="headerlink" href="#emg-circuit" title="Permalink to this headline">¶</a></h2>
 <p>We now have all the steps of the acquisition in place to simulate a lab experiment. We are going to build an EMG circuit on the breadboard, using:</p>
 <ul class="simple">
 <li><p>The electrodes in your kit. The disposable electrodes in the kit are single-use, so do not attach them until you are sure your circuit is working and that you have the correct position (see below).</p></li>
@@ -275,7 +273,7 @@ Can we use this shiny new differential amplifier to record neural signals?</p>
 </div>
 <div class="exercise docutils container">
 <p>3A. Replicate the following circuit:</p>
-<img alt="../_images/eea_fig-49.png" class="align-center" src="../_images/eea_fig-49.png" />
+<img alt="../_images/eea_fig-62.png" class="align-center" src="../_images/eea_fig-62.png" />
 <ul class="simple">
 <li><p>Bypass capacitors = ‘104’</p></li>
 <li><p>Resistor: 220 Ohm</p></li>
@@ -311,6 +309,8 @@ Can we use this shiny new differential amplifier to record neural signals?</p>
 <li><p>Disconnecting from 60/50Hz contaminated ground by using laptop battery</p></li>
 <li><p>Twisting or braiding the cables</p></li>
 </ul>
+<p>3E: The lower the value for Rg the more gain we should get. I tried going from 220Ohm to 100Ohm and it worked but I didn’t get a picture. I did not manage to get it to saturate.
+With a larger resistor for Rg we do get less gain. Formula for instrumental amplifier gain = (R3/R2){(2R1+Rgain)/Rgain}</p>
 </div></blockquote>
 </div></blockquote>
 </div>
